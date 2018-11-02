@@ -15,13 +15,32 @@ module bancoDePruebas();
     control inst1(inputI, inputS, inputClk, inputReset, outputB0, outputB1);
 
     initial begin
-        $monitor("Inputs: %b    %b\nOutput: %b",input1,input2,outputN);
+        $monitor("Inputs: %b    %b\nOutput: %b  %b",inputI,inputS,outputB0,outputB1);
 
-        input1 = 4'b0000;
-        input2 = 4'b0011; #10;
+        inputI = 1'b1;
+        inputS = 1'b1; #10;
 
-        input1 = 4'b1010;
-        input2 = 4'b0011; #10;
+        inputI = 1'b1;
+        inputS = 1'b1; #10;
+
+        inputI = 1'b1;
+        inputS = 1'b0; #10;
+
+        inputI = 1'b1;
+        inputS = 1'b0; #10;
+
+        inputI = 1'b0;
+        inputS = 1'b0; #10;
+
+        inputI = 1'b0;
+        inputS = 1'b0; #10;
+
+        inputI = 1'b1;
+        inputS = 1'b0; #10;
+
+        inputI = 1'b1;
+        inputS = 1'b1; #10;
+
 
     end
 
