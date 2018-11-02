@@ -8,8 +8,8 @@ module flipFlopStageEj1(
     inputR
 );
 
-RisingEdge_DFlipFlop(inputY1,inputClk,outputy1,inputR);
-RisingEdge_DFlipFlop(inputY2,inputClk,outputy2,inputR);
+RisingEdge_DFlipFlop ffd1(inputY1,inputClk,outputy1,inputR);
+RisingEdge_DFlipFlop ffd2(inputY2,inputClk,outputy2,inputR);
 
 endmodule
 
