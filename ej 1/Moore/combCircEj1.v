@@ -1,5 +1,5 @@
 
-module control(
+module combCircEj1(
     inputI,
     inputS,
     inputy1,

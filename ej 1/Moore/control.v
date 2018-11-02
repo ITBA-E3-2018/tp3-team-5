@@ -1,7 +1,8 @@
 `include "flipflopStageEj1.v"
 `include "combCircEj1.v"
+`include "clock.v"
 
-module cpntrol(
+module control(
     inputI,
     inputS,
     inputClk,
@@ -13,6 +14,8 @@ module cpntrol(
     wireY1,
     wireY2,
 );
+
+ clock_gen clk_gen(inputClk);
 
 input inputI;
 input inputS;
@@ -28,7 +31,7 @@ wire wireY2;
 
 combCircEj1(inputI,inputS,wirey1,wirey2,wireY1,wireY2);
 
-flipflopStageEj1(wireY1,wireY2,inputClk,wirey1,wirey2);
+flipflopStageEj1(wireY1,wireY2,inputClk,wirey1,wirey2,inputReset);
 
 outputB0 = outputy2;
 outputB1 = outputy1;
