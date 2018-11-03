@@ -1,0 +1,285 @@
+#! /usr/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision - 6;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x9f8eb0 .scope module, "ControlBombaAgua_tb" "ControlBombaAgua_tb" 2 5;
+ .timescale -6 -6;
+v0xa21120_0 .net "B1", 0 0, L_0xa22a40; 1 drivers
+v0xa211f0_0 .net "B2", 0 0, L_0xa22b50; 1 drivers
+v0xa212c0_0 .var "I", 0 0;
+v0xa21340_0 .var "S", 0 0;
+v0xa213c0_0 .net "clk", 0 0, v0x9f7b20_0; 1 drivers
+v0xa21440_0 .var "dummy", 0 0;
+v0xa214c0_0 .var "dumpfile_path", 512 0;
+v0xa21540_0 .var "reset_n", 0 0;
+S_0xa1fa50 .scope module, "inst" "ControlBombaAgua" 2 13, 3 3, S_0x9f8eb0;
+ .timescale -6 -6;
+v0xa20b60_0 .alias "B1", 0 0, v0xa21120_0;
+v0xa20be0_0 .alias "B2", 0 0, v0xa211f0_0;
+v0xa20c90_0 .net "I", 0 0, v0xa212c0_0; 1 drivers
+v0xa20d60_0 .net "S", 0 0, v0xa21340_0; 1 drivers
+v0xa20e30_0 .alias "clk", 0 0, v0xa213c0_0;
+v0xa20f00_0 .net "estado_actual", 0 0, v0xa204d0_0; 1 drivers
+v0xa20f80_0 .net "prox_estado", 0 0, L_0xa22710; 1 drivers
+v0xa21050_0 .net "reset_n", 0 0, v0xa21540_0; 1 drivers
+S_0xa206e0 .scope module, "primer_bloque" "logica_comb_de_entrada" 3 20, 4 6, S_0xa1fa50;
+ .timescale -6 -6;
+L_0xa225f0 .functor NAND 1, v0xa21340_0, v0xa21340_0, C4<1>, C4<1>;
+L_0xa22710 .functor NAND 1, v0xa212c0_0, L_0xa225f0, v0xa204d0_0, C4<1>;
+v0xa207d0_0 .alias "I", 0 0, v0xa20c90_0;
+v0xa20880_0 .alias "S", 0 0, v0xa20d60_0;
+v0xa20930_0 .alias "Yout", 0 0, v0xa20f80_0;
+v0xa209e0_0 .net "a", 0 0, L_0xa225f0; 1 drivers
+v0xa20a90_0 .alias "y", 0 0, v0xa20f00_0;
+S_0xa20290 .scope module, "f1" "RisingEdgeFlipFlopD" 3 21, 5 3, S_0xa1fa50;
+ .timescale -6 -6;
+v0xa20410_0 .alias "D", 0 0, v0xa20f80_0;
+v0xa204d0_0 .var "Q", 0 0;
+v0xa20580_0 .alias "clk", 0 0, v0xa213c0_0;
+v0xa20630_0 .alias "reset_n", 0 0, v0xa21050_0;
+E_0xa1feb0 .event edge, v0xa20630_0;
+E_0xa203c0 .event posedge, v0x9f7b20_0;
+S_0xa1fb40 .scope module, "segundo_bloque" "logica_comb_de_salida" 3 22, 6 6, S_0xa1fa50;
+ .timescale -6 -6;
+L_0xa228c0 .functor NAND 1, v0xa21340_0, v0xa21340_0, C4<1>, C4<1>;
+L_0xa22920 .functor NAND 1, v0xa204d0_0, v0xa204d0_0, C4<1>, C4<1>;
+L_0xa229b0 .functor NAND 1, L_0xa228c0, L_0xa22920, C4<1>, C4<1>;
+L_0xa22a40 .functor NAND 1, L_0xa229b0, v0xa212c0_0, C4<1>, C4<1>;
+L_0xa22af0 .functor NAND 1, L_0xa228c0, v0xa204d0_0, C4<1>, C4<1>;
+L_0xa22b50 .functor NAND 1, v0xa212c0_0, L_0xa22af0, C4<1>, C4<1>;
+v0xa1fc30_0 .alias "B1", 0 0, v0xa21120_0;
+v0xa1fcf0_0 .alias "B2", 0 0, v0xa211f0_0;
+v0xa1fd90_0 .alias "I", 0 0, v0xa20c90_0;
+v0xa1fe30_0 .alias "S", 0 0, v0xa20d60_0;
+v0xa1fee0_0 .net "a", 0 0, L_0xa228c0; 1 drivers
+v0xa1ff80_0 .net "b", 0 0, L_0xa22920; 1 drivers
+v0xa20060_0 .net "c", 0 0, L_0xa229b0; 1 drivers
+v0xa20100_0 .net "d", 0 0, L_0xa22af0; 1 drivers
+v0xa201f0_0 .alias "y", 0 0, v0xa20f00_0;
+S_0xa000f0 .scope module, "clk_gen" "clock_gen" 2 14, 7 2, S_0x9f8eb0;
+ .timescale -6 -6;
+P_0xa03ba8 .param/l "PERIOD" 7 4, +C4<01010>;
+v0x9f7b20_0 .var "clk", 0 0;
+S_0x9f7a30 .scope begin, "CLOCK_DRIVER" "CLOCK_DRIVER" 7 9, 7 9, S_0xa000f0;
+ .timescale -6 -6;
+S_0x9f8fa0 .scope module, "logica_comb_de_entrada_tb" "logica_comb_de_entrada_tb" 8 4;
+ .timescale -6 -6;
+v0xa219d0_0 .var "I", 0 0;
+v0xa21a70_0 .var "S", 0 0;
+v0xa21af0_0 .net "Yout", 0 0, L_0xa22cb0; 1 drivers
+v0xa21b70_0 .var "y", 0 0;
+S_0xa21660 .scope module, "inst" "logica_comb_de_entrada" 8 11, 4 6, S_0x9f8fa0;
+ .timescale -6 -6;
+L_0xa22c00 .functor NAND 1, v0xa21a70_0, v0xa21a70_0, C4<1>, C4<1>;
+L_0xa22cb0 .functor NAND 1, v0xa219d0_0, L_0xa22c00, v0xa21b70_0, C4<1>;
+v0xa21750_0 .net "I", 0 0, v0xa219d0_0; 1 drivers
+v0xa217d0_0 .net "S", 0 0, v0xa21a70_0; 1 drivers
+v0xa21850_0 .alias "Yout", 0 0, v0xa21af0_0;
+v0xa218d0_0 .net "a", 0 0, L_0xa22c00; 1 drivers
+v0xa21950_0 .net "y", 0 0, v0xa21b70_0; 1 drivers
+S_0xa00000 .scope module, "logica_comb_de_salida_tb" "logica_comb_de_salida_tb" 9 4;
+ .timescale -6 -6;
+v0xa22260_0 .net "B1", 0 0, L_0xa230b0; 1 drivers
+v0xa22300_0 .net "B2", 0 0, L_0xa232f0; 1 drivers
+v0xa223b0_0 .var "I", 0 0;
+v0xa22460_0 .var "S", 0 0;
+v0xa22540_0 .var "y", 0 0;
+S_0xa21bf0 .scope module, "inst" "logica_comb_de_salida" 9 12, 6 6, S_0xa00000;
+ .timescale -6 -6;
+L_0xa22e50 .functor NAND 1, v0xa22460_0, v0xa22460_0, C4<1>, C4<1>;
+L_0xa22f00 .functor NAND 1, v0xa22540_0, v0xa22540_0, C4<1>, C4<1>;
+L_0xa22fb0 .functor NAND 1, L_0xa22e50, L_0xa22f00, C4<1>, C4<1>;
+L_0xa230b0 .functor NAND 1, L_0xa22fb0, v0xa223b0_0, C4<1>, C4<1>;
+L_0xa23200 .functor NAND 1, L_0xa22e50, v0xa22540_0, C4<1>, C4<1>;
+L_0xa232f0 .functor NAND 1, v0xa223b0_0, L_0xa23200, C4<1>, C4<1>;
+v0xa21ce0_0 .alias "B1", 0 0, v0xa22260_0;
+v0xa21d60_0 .alias "B2", 0 0, v0xa22300_0;
+v0xa21de0_0 .net "I", 0 0, v0xa223b0_0; 1 drivers
+v0xa21e60_0 .net "S", 0 0, v0xa22460_0; 1 drivers
+v0xa21f10_0 .net "a", 0 0, L_0xa22e50; 1 drivers
+v0xa21f90_0 .net "b", 0 0, L_0xa22f00; 1 drivers
+v0xa22030_0 .net "c", 0 0, L_0xa22fb0; 1 drivers
+v0xa220d0_0 .net "d", 0 0, L_0xa23200; 1 drivers
+v0xa221c0_0 .net "y", 0 0, v0xa22540_0; 1 drivers
+    .scope S_0xa20290;
+T_0 ;
+    %wait E_0xa203c0;
+    %load/v 8, v0xa20410_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0xa204d0_0, 0, 8;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_0xa20290;
+T_1 ;
+    %wait E_0xa1feb0;
+    %load/v 8, v0xa20630_0, 1;
+    %inv 8, 1;
+    %jmp/0xz  T_1.0, 8;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0xa204d0_0, 0, 0;
+T_1.0 ;
+    %jmp T_1;
+    .thread T_1, $push;
+    .scope S_0xa000f0;
+T_2 ;
+    %fork t_1, S_0x9f7a30;
+    %jmp t_0;
+    .scope S_0x9f7a30;
+t_1 ;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x9f7b20_0, 0, 0;
+    %delay 5, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x9f7b20_0, 0, 1;
+    %delay 5, 0;
+    %end;
+    .scope S_0xa000f0;
+t_0 %join;
+    %jmp T_2;
+    .thread T_2;
+    .scope S_0x9f8eb0;
+T_3 ;
+    %set/v v0xa21540_0, 0, 1;
+    %delay 1, 0;
+    %set/v v0xa21540_0, 1, 1;
+    %delay 1, 0;
+    %set/v v0xa212c0_0, 0, 1;
+    %set/v v0xa21340_0, 0, 1;
+    %delay 3, 0;
+    %set/v v0xa212c0_0, 1, 1;
+    %set/v v0xa21340_0, 0, 1;
+    %delay 7, 0;
+    %set/v v0xa212c0_0, 1, 1;
+    %set/v v0xa21340_0, 1, 1;
+    %delay 4, 0;
+    %set/v v0xa212c0_0, 1, 1;
+    %set/v v0xa21340_0, 0, 1;
+    %delay 2, 0;
+    %set/v v0xa212c0_0, 1, 1;
+    %set/v v0xa21340_0, 1, 1;
+    %delay 1, 0;
+    %vpi_call 2 36 "$finish";
+    %end;
+    .thread T_3;
+    .scope S_0x9f8eb0;
+T_4 ;
+    %movi 8, 779510628, 32;
+    %movi 40, 1953527156, 32;
+    %movi 72, 28533, 32;
+    %movi 104, 0, 32;
+    %movi 136, 0, 32;
+    %movi 168, 0, 32;
+    %movi 200, 0, 32;
+    %movi 232, 0, 32;
+    %movi 264, 0, 32;
+    %movi 296, 0, 32;
+    %movi 328, 0, 32;
+    %movi 360, 0, 32;
+    %movi 392, 0, 32;
+    %movi 424, 0, 32;
+    %movi 456, 0, 32;
+    %movi 488, 0, 32;
+    %movi 520, 0, 1;
+    %set/v v0xa214c0_0, 8, 513;
+    %end;
+    .thread T_4;
+    .scope S_0x9f8eb0;
+T_5 ;
+    %vpi_func 2 44 "$value$plusargs", 8, 32, "VCD_PATH=%s", v0xa214c0_0;
+    %set/v v0xa21440_0, 8, 1;
+    %vpi_call 2 45 "$dumpfile", v0xa214c0_0;
+    %vpi_call 2 46 "$dumpvars", 1'sb0, S_0x9f8eb0;
+    %end;
+    .thread T_5;
+    .scope S_0x9f8fa0;
+T_6 ;
+    %vpi_call 8 14 "$display", "I\011 S\011 y\011 Out";
+    %vpi_call 8 15 "$monitor", "%b\011 %b\011 %b\011 %b", v0xa219d0_0, v0xa21a70_0, v0xa21b70_0, v0xa21af0_0;
+    %set/v v0xa219d0_0, 0, 1;
+    %set/v v0xa21a70_0, 0, 1;
+    %set/v v0xa21b70_0, 0, 1;
+    %delay 1, 0;
+    %set/v v0xa219d0_0, 0, 1;
+    %set/v v0xa21a70_0, 1, 1;
+    %set/v v0xa21b70_0, 0, 1;
+    %delay 1, 0;
+    %set/v v0xa219d0_0, 1, 1;
+    %set/v v0xa21a70_0, 0, 1;
+    %set/v v0xa21b70_0, 0, 1;
+    %delay 1, 0;
+    %set/v v0xa219d0_0, 1, 1;
+    %set/v v0xa21a70_0, 1, 1;
+    %set/v v0xa21b70_0, 0, 1;
+    %delay 1, 0;
+    %set/v v0xa219d0_0, 0, 1;
+    %set/v v0xa21a70_0, 0, 1;
+    %set/v v0xa21b70_0, 1, 1;
+    %delay 1, 0;
+    %set/v v0xa219d0_0, 0, 1;
+    %set/v v0xa21a70_0, 1, 1;
+    %set/v v0xa21b70_0, 1, 1;
+    %delay 1, 0;
+    %set/v v0xa219d0_0, 1, 1;
+    %set/v v0xa21a70_0, 0, 1;
+    %set/v v0xa21b70_0, 1, 1;
+    %delay 1, 0;
+    %set/v v0xa219d0_0, 1, 1;
+    %set/v v0xa21a70_0, 1, 1;
+    %set/v v0xa21b70_0, 1, 1;
+    %delay 1, 0;
+    %vpi_call 8 49 "$finish";
+    %end;
+    .thread T_6;
+    .scope S_0xa00000;
+T_7 ;
+    %vpi_call 9 15 "$display", "I\011 S\011 y\011 B1 B2";
+    %vpi_call 9 16 "$monitor", "%b\011 %b\011 %b\011 %b %b", v0xa223b0_0, v0xa22460_0, v0xa22540_0, v0xa22260_0, v0xa22300_0;
+    %set/v v0xa223b0_0, 0, 1;
+    %set/v v0xa22460_0, 0, 1;
+    %set/v v0xa22540_0, 0, 1;
+    %delay 1, 0;
+    %set/v v0xa223b0_0, 0, 1;
+    %set/v v0xa22460_0, 1, 1;
+    %set/v v0xa22540_0, 0, 1;
+    %delay 1, 0;
+    %set/v v0xa223b0_0, 1, 1;
+    %set/v v0xa22460_0, 0, 1;
+    %set/v v0xa22540_0, 0, 1;
+    %delay 1, 0;
+    %set/v v0xa223b0_0, 1, 1;
+    %set/v v0xa22460_0, 1, 1;
+    %set/v v0xa22540_0, 0, 1;
+    %delay 1, 0;
+    %set/v v0xa223b0_0, 0, 1;
+    %set/v v0xa22460_0, 0, 1;
+    %set/v v0xa22540_0, 1, 1;
+    %delay 1, 0;
+    %set/v v0xa223b0_0, 0, 1;
+    %set/v v0xa22460_0, 1, 1;
+    %set/v v0xa22540_0, 1, 1;
+    %delay 1, 0;
+    %set/v v0xa223b0_0, 1, 1;
+    %set/v v0xa22460_0, 0, 1;
+    %set/v v0xa22540_0, 1, 1;
+    %delay 1, 0;
+    %set/v v0xa223b0_0, 1, 1;
+    %set/v v0xa22460_0, 1, 1;
+    %set/v v0xa22540_0, 1, 1;
+    %delay 1, 0;
+    %vpi_call 9 50 "$finish";
+    %end;
+    .thread T_7;
+# The file index is used to find the file name in the following table.
+:file_names 10;
+    "N/A";
+    "<interactive>";
+    "src/ControlBombaAgua_tb.v";
+    "src/ControlBombaAgua.v";
+    "src/logica_comb_de_entrada.v";
+    "src/RisingEdgeFlipFlopD.v";
+    "src/logica_comb_de_salida.v";
+    "src/clock.v";
+    "src/logica_comb_de_entrada_tb.v";
+    "src/logica_comb_de_salida_tb.v";
