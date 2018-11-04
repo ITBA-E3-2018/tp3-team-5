@@ -2,35 +2,28 @@
 //de dos bombas de agua.
 `timescale 10us / 1us
 
-module ControlBombaAgua_tb;
+module FSM_tb;
 
 wire clk;
 reg reset_n;
-reg I;
-reg S;
-wire B1;
-wire B2;
-ControlBombaAgua inst(I,S,B1,B2,clk,reset_n);
+reg w;
+wire z;
+FSM inst(w,z,clk,reset_n);
 clock_gen clk_gen(clk);
 
 initial begin
     reset_n=0; //Pongo la FSM en su estado incial
-    I=0;
-    S=0;
+    w=0;
     #1
     reset_n=1;
     #1
-    I=1;
-    S=0;
+    w=1;
     #2
-    I=1;
-    S=1;
+    w=0;
     #2
-    I=1;
-    S=0;
-    #2
-    I=1;
-    S=1;
+    w=1;
+    #3
+    w=0;
     #1
     $finish;
 
@@ -42,7 +35,7 @@ reg dummy;
   initial begin
     dummy = $value$plusargs("VCD_PATH=%s", dumpfile_path);
     $dumpfile(dumpfile_path);
-    $dumpvars(0,ControlBombaAgua_tb);
+    $dumpvars(0,FSM_tb);
   end
 
 

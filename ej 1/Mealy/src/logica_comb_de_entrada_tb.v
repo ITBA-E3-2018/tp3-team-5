@@ -45,7 +45,7 @@ initial begin
   I=1;
   S=1;
   y=1;
-  #1
+  #100
   $finish;
   
 end
