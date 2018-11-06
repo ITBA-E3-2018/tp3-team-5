@@ -1,0 +1,202 @@
+$date
+	Tue Nov  6 16:22:43 2018
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	10us
+$end
+$scope module bancoDePruebas $end
+$var wire 1 ! outputB1 $end
+$var wire 1 " outputB0 $end
+$var wire 1 # inputClk $end
+$var reg 1 $ dummy $end
+$var reg 513 % dumpfile_path [512:0] $end
+$var reg 1 & inputI $end
+$var reg 1 ' inputReset $end
+$var reg 1 ( inputS $end
+$scope module clk_gen $end
+$var reg 1 # clk $end
+$scope begin CLOCK_DRIVER $end
+$upscope $end
+$upscope $end
+$scope module inst1 $end
+$var wire 1 # inputClk $end
+$var wire 1 & inputI $end
+$var wire 1 ' inputReset $end
+$var wire 1 ( inputS $end
+$var wire 1 " outputB0 $end
+$var wire 1 ! outputB1 $end
+$var wire 1 ) wirey2 $end
+$var wire 1 * wirey1 $end
+$var wire 1 + wireY2 $end
+$var wire 1 , wireY1 $end
+$scope module combCirc $end
+$var wire 1 & inputI $end
+$var wire 1 ( inputS $end
+$var wire 1 , outputY1 $end
+$var wire 1 + outputY2 $end
+$var wire 1 ) inputy2 $end
+$var wire 1 * inputy1 $end
+$upscope $end
+$scope module ffsEj1 $end
+$var wire 1 # inputClk $end
+$var wire 1 ' inputR $end
+$var wire 1 , inputY1 $end
+$var wire 1 + inputY2 $end
+$var wire 1 ) outputy2 $end
+$var wire 1 * outputy1 $end
+$scope module ffd1 $end
+$var wire 1 , D $end
+$var wire 1 ' R $end
+$var wire 1 # clk $end
+$var reg 1 * Q $end
+$upscope $end
+$scope module ffd2 $end
+$var wire 1 + D $end
+$var wire 1 ' R $end
+$var wire 1 # clk $end
+$var reg 1 ) Q $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0,
+0+
+0*
+0)
+1(
+0'
+1&
+b110001001101001011011100010111101101111011101010111010001110000011101010111010000101110011101100110001101100100 %
+1$
+0#
+0"
+0!
+$end
+#50
+1#
+#100
+0#
+#150
+1#
+#200
+0#
+1,
+0(
+#250
+0,
+1+
+1!
+1*
+1#
+#300
+0#
+#350
+1,
+0+
+1"
+1)
+0!
+0*
+1#
+#400
+0#
+1+
+0&
+#450
+1!
+1*
+1#
+#500
+0#
+#550
+1#
+#600
+0#
+0+
+1&
+#650
+1+
+0,
+0"
+0)
+1#
+#700
+0#
+0+
+1(
+#750
+0!
+0*
+1#
+#800
+0#
+#850
+1#
+#900
+0#
+#950
+1#
+#1000
+0#
+#1050
+1#
+#1100
+0#
+#1150
+1#
+#1200
+0#
+#1250
+1#
+#1300
+0#
+#1350
+1#
+#1400
+0#
+#1450
+1#
+#1500
+0#
+#1550
+1#
+#1600
+0#
+#1650
+1#
+#1700
+0#
+#1750
+1#
+#1800
+0#
+#1850
+1#
+#1900
+0#
+#1950
+1#
+#2000
+0#
+#2050
+1#
+#2100
+0#
+#2150
+1#
+#2200
+0#
+#2250
+1#
+#2300
+0#
+#2350
+1#
+#2400
+0#
