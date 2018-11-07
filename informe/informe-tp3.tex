@@ -1,0 +1,1111 @@
+\documentclass[english,spanish]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
+\usepackage{array}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{matrix,calc}
+
+\makeatletter
+
+\providecommand{\tabularnewline}{\\}
+
+\makeatother
+
+\usepackage{babel}
+\addto\shorthandsspanish{\spanishdeactivate{~<>}}
+
+%isolated term
+%#1 - Optional. Space between node and grouping line. Default=0
+%#2 - node
+%#3 - filling color
+\newcommand{\implicantsol}[3][0]{
+    \draw[rounded corners=3pt, fill=#3, opacity=0.3] ($(#2.north west)+(135:#1)$) rectangle ($(#2.south east)+(-45:#1)$);
+    }
+
+
+%internal group
+%#1 - Optional. Space between node and grouping line. Default=0
+%#2 - top left node
+%#3 - bottom right node
+%#4 - filling color
+\newcommand{\implicant}[4][0]{
+    \draw[rounded corners=3pt, fill=#4, opacity=0.3] ($(#2.north west)+(135:#1)$) rectangle ($(#3.south east)+(-45:#1)$);
+    }
+
+%group lateral borders
+%#1 - Optional. Space between node and grouping line. Default=0
+%#2 - top left node
+%#3 - bottom right node
+%#4 - filling color
+\newcommand{\implicantcostats}[4][0]{
+    \draw[rounded corners=3pt, fill=#4, opacity=0.3] ($(rf.east |- #2.north)+(90:#1)$)-| ($(#2.east)+(0:#1)$) |- ($(rf.east |- #3.south)+(-90:#1)$);
+    \draw[rounded corners=3pt, fill=#4, opacity=0.3] ($(cf.west |- #2.north)+(90:#1)$) -| ($(#3.west)+(180:#1)$) |- ($(cf.west |- #3.south)+(-90:#1)$);
+}
+
+%group top-bottom borders
+%#1 - Optional. Space between node and grouping line. Default=0
+%#2 - top left node
+%#3 - bottom right node
+%#4 - filling color
+\newcommand{\implicantdaltbaix}[4][0]{
+    \draw[rounded corners=3pt, fill=#4, opacity=0.3] ($(cf.south -| #2.west)+(180:#1)$) |- ($(#2.south)+(-90:#1)$) -| ($(cf.south -| #3.east)+(0:#1)$);
+    \draw[rounded corners=3pt, fill=#4, opacity=0.3] ($(rf.north -| #2.west)+(180:#1)$) |- ($(#3.north)+(90:#1)$) -| ($(rf.north -| #3.east)+(0:#1)$);
+}
+
+%group corners
+%#1 - Optional. Space between node and grouping line. Default=0
+%#2 - filling color
+\newcommand{\implicantcantons}[2][0]{
+    \draw[rounded corners=3pt, opacity=.3] ($(rf.east |- 0.south)+(-90:#1)$) -| ($(0.east |- cf.south)+(0:#1)$);
+    \draw[rounded corners=3pt, opacity=.3] ($(rf.east |- 8.north)+(90:#1)$) -| ($(8.east |- rf.north)+(0:#1)$);
+    \draw[rounded corners=3pt, opacity=.3] ($(cf.west |- 2.south)+(-90:#1)$) -| ($(2.west |- cf.south)+(180:#1)$);
+    \draw[rounded corners=3pt, opacity=.3] ($(cf.west |- 10.north)+(90:#1)$) -| ($(10.west |- rf.north)+(180:#1)$);
+    \fill[rounded corners=3pt, fill=#2, opacity=.3] ($(rf.east |- 0.south)+(-90:#1)$) -|  ($(0.east |- cf.south)+(0:#1)$) [sharp corners] ($(rf.east |- 0.south)+(-90:#1)$) |-  ($(0.east |- cf.south)+(0:#1)$) ;
+    \fill[rounded corners=3pt, fill=#2, opacity=.3] ($(rf.east |- 8.north)+(90:#1)$) -| ($(8.east |- rf.north)+(0:#1)$) [sharp corners] ($(rf.east |- 8.north)+(90:#1)$) |- ($(8.east |- rf.north)+(0:#1)$) ;
+    \fill[rounded corners=3pt, fill=#2, opacity=.3] ($(cf.west |- 2.south)+(-90:#1)$) -| ($(2.west |- cf.south)+(180:#1)$) [sharp corners]($(cf.west |- 2.south)+(-90:#1)$) |- ($(2.west |- cf.south)+(180:#1)$) ;
+    \fill[rounded corners=3pt, fill=#2, opacity=.3] ($(cf.west |- 10.north)+(90:#1)$) -| ($(10.west |- rf.north)+(180:#1)$) [sharp corners] ($(cf.west |- 10.north)+(90:#1)$) |- ($(10.west |- rf.north)+(180:#1)$) ;
+}
+
+%Empty Karnaugh map 4x4
+\newenvironment{Karnaugh}%
+{
+\begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
+\draw (0,0) grid (4,4);
+\draw (0,4) -- node [pos=0.7,above right,anchor=south west] {cd} node [pos=0.7,below left,anchor=north east] {ab} ++(135:1);
+%
+\matrix (mapa) [matrix of nodes,
+        column sep={0.8cm,between origins},
+        row sep={0.8cm,between origins},
+        every node/.style={minimum size=0.3mm},
+        anchor=8.center,
+        ampersand replacement=\&] at (0.5,0.5)
+{
+                       \& |(c00)| 00         \& |(c01)| 01         \& |(c11)| 11         \& |(c10)| 10         \& |(cf)| \phantom{00} \\
+|(r00)| 00             \& |(0)|  \phantom{0} \& |(1)|  \phantom{0} \& |(3)|  \phantom{0} \& |(2)|  \phantom{0} \&                     \\
+|(r01)| 01             \& |(4)|  \phantom{0} \& |(5)|  \phantom{0} \& |(7)|  \phantom{0} \& |(6)|  \phantom{0} \&                     \\
+|(r11)| 11             \& |(12)| \phantom{0} \& |(13)| \phantom{0} \& |(15)| \phantom{0} \& |(14)| \phantom{0} \&                     \\
+|(r10)| 10             \& |(8)|  \phantom{0} \& |(9)|  \phantom{0} \& |(11)| \phantom{0} \& |(10)| \phantom{0} \&                     \\
+|(rf) | \phantom{00}   \&                    \&                    \&                    \&                    \&                     \\
+};
+}%
+{
+\end{tikzpicture}
+}
+
+%Empty Karnaugh map 2x4
+\newenvironment{Karnaughvuit}%
+{
+\begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
+\draw (0,0) grid (4,2);
+\draw (0,2) -- node [pos=0.7,above right,anchor=south west] {bc} node [pos=0.7,below left,anchor=north east] {a} ++(135:1);
+%
+\matrix (mapa) [matrix of nodes,
+        column sep={0.8cm,between origins},
+        row sep={0.8cm,between origins},
+        every node/.style={minimum size=0.3mm},
+        anchor=4.center,
+        ampersand replacement=\&] at (0.5,0.5)
+{
+                      \& |(c00)| 00         \& |(c01)| 01         \& |(c11)| 11         \& |(c10)| 10         \& |(cf)| \phantom{00} \\
+|(r00)| 0             \& |(0)|  \phantom{0} \& |(1)|  \phantom{0} \& |(3)|  \phantom{0} \& |(2)|  \phantom{0} \&                     \\
+|(r01)| 1             \& |(4)|  \phantom{0} \& |(5)|  \phantom{0} \& |(7)|  \phantom{0} \& |(6)|  \phantom{0} \&                     \\
+|(rf) | \phantom{00}  \&                    \&                    \&                    \&                    \&                     \\
+};
+}%
+{
+\end{tikzpicture}
+}
+
+%Empty Karnaugh map 2x2
+\newenvironment{Karnaughquatre}%
+{
+\begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
+\draw (0,0) grid (2,2);
+\draw (0,2) -- node [pos=0.7,above right,anchor=south west] {b} node [pos=0.7,below left,anchor=north east] {a} ++(135:1);
+%
+\matrix (mapa) [matrix of nodes,
+        column sep={0.8cm,between origins},
+        row sep={0.8cm,between origins},
+        every node/.style={minimum size=0.3mm},
+        anchor=2.center,
+        ampersand replacement=\&] at (0.5,0.5)
+{
+          \& |(c00)| 0          \& |(c01)| 1  \\
+|(r00)| 0 \& |(0)|  \phantom{0} \& |(1)|  \phantom{0} \\
+|(r01)| 1 \& |(2)|  \phantom{0} \& |(3)|  \phantom{0} \\
+};
+}%
+{
+\end{tikzpicture}
+}
+
+%Defines 8 or 16 values (0,1,X)
+\newcommand{\contingut}[1]{%
+\foreach \x [count=\xi from 0]  in {#1}
+     \path (\xi) node {\x};
+}
+
+%Places 1 in listed positions
+\newcommand{\minterms}[1]{%
+    \foreach \x in {#1}
+        \path (\x) node {1};
+}
+
+%Places 0 in listed positions
+\newcommand{\maxterms}[1]{%
+    \foreach \x in {#1}
+        \path (\x) node {0};
+}
+
+%Places X in listed positions
+\newcommand{\indeterminats}[1]{%
+    \foreach \x in {#1}
+        \path (\x) node {X};
+}
+
+\begin{document}
+\tableofcontents{}
+
+\pagebreak{}
+
+\part*{Introducción}
+
+En el siguiente trabajo se pide la implementación de FSM tanto de
+Moore como de Mealy de diferentes problemas. El diagrama de bloques
+correspondiente a una FSM de Moore es la siguiente:
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{moore}
+\par\end{centering}
+\caption{Diagrama de bloques - Maquina de Moore}
+
+\end{figure}
+Como se puede ver en el diagrama, se utilizan dos circuitos combinacionales
+conformado por compuertas lógicas. El primero de ellos convierte el
+o los inputs del sistema y el estado actual de la FSM en el nuevo
+estado de la FSM. Ese nuevo estado se guarda en Flip-Flops, la cual
+cada Flip-Flop se denomina variable de estado. Las cuales se necesitan
+los suficientes como para representar en binario la cantidad de estados
+que se tengan. El segundo circuito combinacional se utiliza para traducir
+el estado actual al o los outputs de la FSM en ese estado. La maquina
+de Mealy es muy similar, como se puede apreciar a continuación:
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{mealy}
+\par\end{centering}
+\caption{Diagrama de bloques - Maquina de Mealy}
+\end{figure}
+La única diferencia a la maquina de Moore, es que en el segundo circuito
+combinacional, ademas de el estado actual se tiene como input también
+a el input del circuito. De esta manera, según el problema, se puede
+reducir considerablemente el circuito combinacional y hasta reducir
+la cantidad de estados de la FSM.
+
+Para lograr la maquina de estados deseada mediante la implementación
+de Mealy o de Moore se analizó el problema en etapas. En primer lugar
+se plantearon los estados necesarios, las transiciones de los mismos
+y las salidas correspondientes a cada transición mediante un grafo.
+A continuación, se volcaron los estados y transiciones obtenidos del
+grafo en una tabla. Finalmente, se utilizó dicha tabla para obtener
+la tabla de verdad correspondiente al bloque de entrada de lógica
+combinacional tanto como para el bloque de salida. Con dichas tablas
+se procedió a utilizar el método de minimización por mapas de Karnaugh
+para conseguir la solución menor costo del problema, teniendo en cuenta
+que en algunos casos es necesario agregar compuertas de manera que
+no se produzcan glitches.
+
+\pagebreak{}
+
+\section{Control de bombas de agua}
+
+\subsection{Maquina de Moore}
+
+Para el control de una bomba de agua, dados los inputs I y S, y los
+outputs B0 y B1, siendo los inputs los sensores y las outputs las
+bombas de agua a controlar, la FSM a implementar debe seguir la próxima
+tabla de verdad:
+
+\begin{table}[H]
+\begin{centering}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+\multicolumn{2}{|c|}{Input $w$} & \multicolumn{2}{c|}{Output $Z$}\tabularnewline
+\hline 
+\hline 
+$I$ & $S$ & $B_{0}$ & $B_{1}$\tabularnewline
+\hline 
+$1$ & $1$ & $0$ & $0$\tabularnewline
+\hline 
+$0$ & $0$ & $1$ & $1$\tabularnewline
+\hline 
+$1$ & $0$ & \multicolumn{2}{c|}{Alterna entre $B_{0}$ y $B_{1}$}\tabularnewline
+\hline 
+$0$ & $1$ & $d$ & $d$\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption{Tabla de verdad}
+
+\end{table}
+Basándose en la anterior tabla de verdad se llego a el siguiente diagrama
+de estados:
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{ej1-CircuitoMoore}
+\par\end{centering}
+\caption{Diagrama de estados - Maquina de Moore}
+\end{figure}
+Este diagrama se puede ver reflejado en la siguiente tabla de estados:
+
+\begin{table}[H]
+\begin{centering}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline 
+\multicolumn{2}{|c|}{Estado Actual} & \multicolumn{4}{c|}{Próximo Estado} & Output \tabularnewline
+\hline 
+\multirow{2}{*}{Nombre} & \multirow{2}{*}{$y_{2}y_{1}$} & $w=11$ & $w=00$ & $w=10$ & $w=01$ & \multirow{2}{*}{$B_{0}B_{1}$}\tabularnewline
+\cline{3-6} 
+ &  & \multicolumn{4}{c|}{$Y_{2}Y_{1}$} & \tabularnewline
+\hline 
+$A$ & $00$ & $00$ & $11$ & $01$ & $d$ & $00$\tabularnewline
+\hline 
+$B$ & $01$ & $00$ & $11$ & $10$ & $d$ & $01$\tabularnewline
+\hline 
+$C$ & $10$ & $00$ & $11$ & $01$ & $d$ & $10$\tabularnewline
+\hline 
+$D$ & $11$ & $00$ & $11$ & $01$ & $d$ & $11$\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption{Tabla de estados - Maquina de Moore}
+
+\end{table}
+Se puede ver fácilmente que al elegir estas variables de estado, se
+tiene que:
+
+\[
+B_{1}=y_{1}
+\]
+
+\[
+B_{0}=y_{2}
+\]
+
+De esta manera no se necesita circuito combinacional tras los Flip-Flops.
+Para el circuito combinacional de la entrada se resuelven los siguientes
+mapas de Karnaugh:
+
+\begin{figure}[H]
+	\begin{center}
+    	\begin{Karnaugh}
+       		\contingut{1,1,1,1,d,d,d,d,1,0,1,1,0,0,0,0}
+       		\implicant{0}{6}{blue}
+       		\implicantcantons[2pt]{orange}
+       		\implicantdaltbaix[3pt]{3}{10}{green}
+    	\end{Karnaugh}
+    \end{center}
+\caption{Mapa Karnaugh $Y_{1}$}
+
+\end{figure}
+\begin{figure}[H]
+	\begin{center}
+    	\begin{Karnaugh}
+       		\contingut{1,1,1,1,d,d,d,d,0,1,0,0,0,0,0,0}
+       		\implicant{0}{6}{blue}
+       		\implicantdaltbaix[3pt]{1}{9}{green}  
+    	\end{Karnaugh}
+    \end{center}
+\caption{Mapa Karnaugh $Y_{2}$}
+\end{figure}
+Lo cual se llega a las siguientes expresiones:
+
+$\begin{cases}
+Y_{1}=\overline{I}+y_{2}\overline{S}+\overline{y_{1}}\cdotp\overline{S}\\
+Y_{2}=\overline{I}+\overline{y_{2}}\cdotp y_{1}\cdotp\overline{S}
+\end{cases}$
+
+Ahora que se tienen todas las etapas se prosigue a diagramar el circuito:
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{mooreej1circ}
+\par\end{centering}
+\caption{Circuito - Maquina de Moore}
+
+\end{figure}
+Y si se deseara implementarlo con compuertas NAND:
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.7]{Ej1Moore}
+\par\end{centering}
+\caption{Circuito Compuertas NAND - Maquina de Moore}
+
+\end{figure}
+Para finalizar, se realizo la simulación en Verilog, adjunta en la
+carpeta, la cual dio el siguiente resultado en GTKwave:
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.3]{GTKwaveEj1}
+\par\end{centering}
+\caption{Simulación en GTKwave}
+
+\end{figure}
+
+\subsection{Maquina de Mealy}
+
+\subsubsection{Diagrama de estados}
+
+A continuación se presenta el diagrama de los estados,transiciones
+y salidas correspondientes a cada transición para la maquina de estados
+correspondiente al control de los niveles de agua:
+\begin{center}
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.6]{ImagenesEj1/DiagramaDeEstados}
+\par\end{centering}
+\caption{\label{fig:Diagramas-de-estados}Diagramas de estados planteado}
+\end{figure}
+\par\end{center}
+
+En el diagrama anterior la letra w simboliza el input del circuito
+mientras que z simboliza el output del mismo. Dichos símbolos fueron
+elegidos de la siguiente manera:
+\begin{center}
+$w=IS$ y $z=B2B1$
+\par\end{center}
+
+\subsubsection{Representación en tabla}
+
+Representando el grafo de la figura \ref{fig:Diagramas-de-estados}
+en forma de tabla se llega a:
+\begin{center}
+\begin{table}[H]
+\begin{centering}
+\begin{tabular}{|c|c|c|}
+\hline 
+Estado actual & Próximo estado & z(output)\tabularnewline
+\hline 
+\hline 
+y & Y & B2B1\tabularnewline
+\hline 
+ & \multicolumn{1}{c|}{%
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+w= & 00 & 01 & 10 & 11\tabularnewline
+\hline 
+\end{tabular}} & %
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+w= & 00 & 01 & 10 & 11\tabularnewline
+\hline 
+\end{tabular}\tabularnewline
+\cline{1-1} 
+0 & %
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+ & d & d & 1 & d\tabularnewline
+\hline 
+\end{tabular} & %
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+ & 11 & dd & 01 & 00\tabularnewline
+\hline 
+\end{tabular}\tabularnewline
+\cline{1-1} 
+1 & %
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+ & d & d & 0 & d\tabularnewline
+\hline 
+\end{tabular} & %
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+ & 11 & dd & 10 & 00\tabularnewline
+\hline 
+\end{tabular}\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption{FSM representada en tabla}
+\end{table}
+\par\end{center}
+
+\subsubsection{Lógica combinacional}
+
+De la tabla anterior se puede llegar a una tabla de verdad correspondiente
+a las salidas de los bloques de lógica combinacional del circuito.
+La tabla de verdad correspondiente es:
+\begin{center}
+\begin{table}[H]
+\begin{centering}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline 
+I & S & y & Y & B2 & B1\tabularnewline
+\hline 
+\hline 
+0 & 0 & 0 & d & 1 & 1\tabularnewline
+\hline 
+0 & 1 & 0 & d & d & d\tabularnewline
+\hline 
+1 & 0 & 0 & 1 & 0 & 1\tabularnewline
+\hline 
+1 & 1 & 0 & d & 0 & 0\tabularnewline
+\hline 
+0 & 0 & 1 & d & 1 & 1\tabularnewline
+\hline 
+0 & 1 & 1 & d & d & d\tabularnewline
+\hline 
+1 & 0 & 1 & 0 & 1 & 0\tabularnewline
+\hline 
+1 & 1 & 1 & d & 0 & 0\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption{\label{tab:Tabla-de-verdad}Tabla de verdad del circuito}
+\end{table}
+\par\end{center}
+
+Se procedió a simplificar cada uno de los bloques de lógica combinacional
+mediante el uso de mapas de Karnaugh.Se analizara por un lado la simplificación
+del bloque de entrada y por otro la del bloque de salida.
+
+\paragraph{Simplificación del bloque de entrada}
+
+Utilizando la tabla \ref{tab:Tabla-de-verdad} se llega que el mapa
+de Karnaugh para la salida del primer bloque de lógica combinacional
+es:
+\begin{center}
+\begin{figure}[H]
+\caption{Mapa de Karnaugh para la lógica de entrada}
+\end{figure}
+\par\end{center}
+
+De los grupos elegidos se llega a la siguiente expresión:
+\begin{center}
+$Y=\bar{y}+\bar{I}+S$
+\par\end{center}
+
+Reescribiendo la expresión en función de compuertas nands se convierte
+en:
+\begin{center}
+$Y=\overline{y.I.\bar{S}}$
+\par\end{center}
+
+\paragraph{Simplificación del bloque de salida}
+
+Como el circuito tiene dos salidas, $B_{2}$ y $B_{1}$, se planteo
+un mapa de Karnaugh para cada una. Dichos mapas son los siguientes:
+\begin{center}
+\begin{figure}[H]
+\caption{Mapas de Karnaugh para la lógica de salida}
+\end{figure}
+\par\end{center}
+
+De los grupos elegidos se llega a la siguiente expresión para $B_{2}$:
+\begin{center}
+$B_{2}=\bar{I}+y.\bar{S}=\overline{I.(\bar{y}+S)}=\overline{I.(\overline{y.\overline{S}}})$
+\par\end{center}
+
+En cuanto a $B_{1}$ se tiene:
+\begin{center}
+$B_{1}=\overline{I}+\overline{S}.\overline{y}=\overline{I.(S+y)}=\overline{I.\overline{(\overline{S}.\overline{y})}}$
+\par\end{center}
+
+En ambos casos se busco escribir las salida en función de compuertas
+nands para que luego sea mas simple plantear el circuito equivalente
+unicamente en función de estas compuertas.
+
+\subsubsection{Circuito equivalente}
+
+Utilizando las expresiones simplificadas para el bloque de entrada
+como para el de salida, así como también el hecho de que solo se necesita
+un variable de estados para la maquina de estados, se puede llegar
+al circuito equivalente de la figura \ref{fig:Diagramas-de-estados}.Dicho
+circuito es el siguiente:
+\begin{center}
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{ImagenesEj1/Ej1Mealy}
+\par\end{centering}
+\caption{\label{fig:Circuito-elaborado-con}}
+\end{figure}
+\par\end{center}
+
+Cabe aclarar que 'y' no es un input del circuito sino que el estado
+actual de la FSM.Se posiciono en el circuito de forma tal que la comprensión
+del mismo sea mas sencilla. Si se desea que la salida del circuito
+cambie con cada flanco positivo del clock debe colocarse un flip flop
+adicional a la salida del circuito.
+
+\subsubsection{Simulación}
+
+Para asegurar que el circuito equivalente funciona de manera deseada
+se realizo una simulación del mismo en Verilog simulando las mismas
+conexiones físicas que se presentan en la figura \ref{fig:Circuito-elaborado-con}.
+Se elaboro por separado un modulo para cada bloque de lógica combinacional
+con su banco de prueba correspondiente para asegurar de que cumpla
+con su tabla de verdad así como también un modulo para toda la FSM.
+El código de cada modulo se encuentra en el repositorio del proyecto
+en la carpeta correspondiente al ejercicio dentro de la carpeta 'src'.
+A continuación se presenta una imagen de la simulación realizada en
+GtkWave de la implementación en Verilog de la FSM:
+\begin{center}
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{ImagenesEj1/SimEj1Mealy}
+\par\end{centering}
+\caption{Simulación en GtkWave de la FSM}
+\end{figure}
+\par\end{center}
+
+\section{Detección de secuencia binaria }
+
+\subsection{Maquina de Moore}
+
+Como se desea una FSM que sea capaz de detectar la secuencia $1-1-0-1$,
+el input sera un solo bit binario ($w$) y la salida representara
+si la secuencia se a detectado ($z$). Tras detectar la secuencia,
+el bit queda prendido hasta que se haga un reset de la FSM. El diagrama
+de estados que corresponde a esta FSM es el siguiente:
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{diagramaEj2}
+\par\end{centering}
+\caption{Diagrama de estados - Maquina de Moore}
+\end{figure}
+El anterior diagrama puede reflejarse en la siguiente tabla de estados:
+
+\begin{table}[H]
+\begin{centering}
+\begin{tabular}{|c|c|c||c|c||c|c|}
+\hline 
+\multicolumn{2}{|c|}{Estado Actual} & \multicolumn{4}{c|}{Próximo Estado} & Output \tabularnewline
+\hline 
+\multirow{2}{*}{Nombre} & \multirow{2}{*}{$y_{3}y_{2}y_{1}$} & \multicolumn{2}{c|}{$w=0$} & \multicolumn{2}{c|}{$w=1$} & \multirow{2}{*}{$z$}\tabularnewline
+\cline{3-6} 
+ &  & \multicolumn{4}{c|}{$Y_{3}Y_{2}Y_{1}$} & \tabularnewline
+\hline 
+$A$ & $000$ & \multicolumn{2}{c|}{$000$} & \multicolumn{2}{c|}{$001$} & $0$\tabularnewline
+\hline 
+$B$ & $001$ & \multicolumn{2}{c|}{$000$} & \multicolumn{2}{c|}{$010$} & $0$\tabularnewline
+\hline 
+$C$ & $010$ & \multicolumn{2}{c|}{$011$} & \multicolumn{2}{c|}{$000$} & $0$\tabularnewline
+\hline 
+$D$ & $011$ & \multicolumn{2}{c|}{$000$} & \multicolumn{2}{c|}{$100$} & $0$\tabularnewline
+\hline 
+$E$ & $100$ & \multicolumn{2}{c|}{$100$} & \multicolumn{2}{c|}{$100$} & $1$\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption{Tabla de estados - Maquina de Moore}
+\end{table}
+Es trivial llegar a la siguiente relación entre las variables de estado
+y el output:
+
+\[
+z=y_{3}
+\]
+
+Al igual que en la primer sección, no se necesitara un circuito combinacional
+a la salida de los Flip-Flops. Se resuelven los siguientes mapas de
+Karnaugh para encontrar el circuito combinacional a la entrada:
+
+\begin{figure}[H]
+	\begin{center}
+    	\begin{Karnaugh}
+       		\contingut{0,0,1,0,0,d,d,d,1,0,0,0,0,d,d,d}
+       		\implicant{1}{11}{blue}
+       		\implicant{4}{14}{green}
+       		\implicant{0}{5}{red}
+       		\implicant{15}{10}{orange}
+    	\end{Karnaugh}
+    \end{center}
+\caption{Mapa Karnaugh $Y_{1}$}
+\end{figure}
+\begin{figure}[H]
+	\begin{center}
+		\begin{Karnaugh}
+       		\contingut{0,0,1,0,0,d,d,d,0,1,0,0,0,d,d,d}
+       		\implicant{5}{15}{purple}
+       		\implicant{7}{14}{green}
+       		\implicant{13}{9}{red}
+       		\implicant{2}{6}{blue}
+    	\end{Karnaugh}
+	\end{center}
+\caption{Mapa Karnaugh $Y_{2}$}
+\end{figure}
+\begin{figure}[H]
+	\begin{center}
+    	\begin{Karnaugh}
+       		\contingut{0,0,0,0,1,d,d,d,0,0,0,1,1,d,d,d}
+       		\implicant{4}{14}{blue}
+       		\implicant{15}{11}{green}
+    	\end{Karnaugh}
+	\end{center}
+\caption{Mapa Karnaugh $Y_{3}$}
+\end{figure}
+Lo cual se llega a las siguientes expresiones:
+
+$\begin{cases}
+Y_{1}=\overline{y_{1}}\cdotp\overline{y_{3}}\cdotp(y_{2}\oplus w)\\
+Y_{2}=y_{2}\cdotp\overline{y_{1}}\cdotp\overline{w}+\overline{y_{2}}\cdotp y_{1}\cdotp w+y_{1}\cdotp y_{3}+y_{2}y_{3}\\
+Y_{3}=y_{3}+y_{2}\cdotp y_{1}\cdotp w
+\end{cases}$
+
+El circuito correspondiente entonces sera:
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.7]{Ej2Moore}
+\par\end{centering}
+\caption{Circuito - Maquina de Moore}
+\end{figure}
+Para finalizar, se realizo la simulación en Verilog, adjunta en la
+carpeta, la cual dio el siguiente resultado en GTKwave:
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.3]{GTKwaveej2}
+\par\end{centering}
+\caption{Simulación en GTKwave}
+\end{figure}
+
+\subsection{Maquina de Mealy}
+
+\subsubsection{Diagrama de estados}
+
+A continuación se presenta el diagrama de los estados,transiciones
+y salidas correspondientes a cada transición para la maquina de estados
+que detecta la secuencia de bits 1-1-0-1:
+\begin{center}
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.6]{ImagenesEj2/DiagramaDeEstados}
+\par\end{centering}
+\caption{\label{fig:Diagramas-de-estados-1}Diagramas de estados planteado}
+\end{figure}
+\par\end{center}
+
+En el diagrama anterior la letra w simboliza el input del circuito
+mientras que z simboliza el output del mismo e 'y' simboliza el estado
+actual.
+
+\subsubsection{Representación en tabla}
+
+Representando el grafo de la figura \ref{fig:Diagramas-de-estados-1}
+en forma de tabla se llega a:
+\begin{center}
+\begin{table}[H]
+\begin{centering}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline 
+\multicolumn{1}{|c}{Estado actual} &  & 
+\multicolumn{1}{c}{Proximo estado} &  & 
+\multicolumn{1}{c}{z(Output)} & 
+\tabularnewline
+\hline 
+\hline 
+$y_{1}$ & $y_{2}$ & w=0 & w=1 & w=0 & w=1
+\tabularnewline
+\hline 
+0 & 0 & 00 & 01 & 0 &0
+\tabularnewline
+\hline 
+0 & 1 &00 & 10 &0 & 0
+\tabularnewline
+\hline 1 & 0 & 11 & 00 & 0 &0
+\tabularnewline
+\hline 1 & 1 & 00 & 00 & 0 & 1
+\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption{FSM representada en tabla}
+\end{table}
+\par\end{center}
+
+\subsubsection{Lógica combinacional}
+
+De la tabla anterior se puede llegar a una tabla de verdad correspondiente
+a las salidas de los bloques de lógica combinacional del circuito.
+La tabla de verdad correspondiente es:
+\begin{center}
+\begin{table}[H]
+\begin{centering}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline $y_{1}$ & $y_{2}$ & w & $Y_{1}$ & $Y_{2}$ & z
+\tabularnewline
+\hline 
+\hline 0 & 0 & 0 & 0 & 0 & 0
+\tabularnewline
+\hline 0 & 1 & 0 & 0 & 0 & 0
+\tabularnewline
+\hline 1 & 0 & 0 & 1 & 1 & 0
+\tabularnewline
+\hline 1 & 1 & 0 & 0 & 0 &0
+\tabularnewline
+\hline 0 & 0 & 1 & 0 & 1 & 0
+\tabularnewline
+\hline 0 & 1 & 1 & 1 & 0 & 0
+\tabularnewline
+\hline 1 & 0 & 1 & 0 & 0 & 0
+\tabularnewline
+\hline 1 & 1 & 1 & 0 & 0 & 1
+\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption{\label{tab:Tabla-de-verdad-1}Tabla de verdad del circuito}
+\end{table}
+\par\end{center}
+
+$y_{1}$ e $y_{2}$ son las variables de estado utilizadas, $Y_{1}$
+e $Y_{2}$ son las salidas del primer bloque de lógica combinacional
+y simbolizan el próximo estado de la FSM.
+
+Se procedió a simplificar cada uno de los bloques de lógica combinacional
+mediante el uso de mapas de Karnaugh.Se analizara por un lado la simplificación
+del bloque de entrada y por otro la del bloque de salida.
+
+\paragraph{Simplificación del bloque de entrada}
+
+Utilizando la tabla \ref{tab:Tabla-de-verdad-1} se llega que el mapa
+de Karnaugh para la salida del primer bloque de lógica combinacional
+es:
+\begin{center}
+\begin{figure}[H]
+\caption{Mapas de Karnaugh para la lógica de entrada}
+\end{figure}
+\par\end{center}
+
+De los grupos elegidos se lega a la siguiente expresión para $Y_{1}$:
+\begin{center}
+$Y_{1}=w.\overline{y_{1}}.y_{2}+\overline{w}.y_{1}.\overline{y_{2}}=\overline{\overline{w.\overline{y_{1}}.y_{2}}.\overline{\overline{w}.y_{1}.\overline{y_{2}}}}$
+\par\end{center}
+
+En cuanto a $Y_{2}$ se tiene:
+\begin{center}
+$Y_{2}=w.\overline{y_{1}}.\overline{y_{2}}+\overline{w}y_{1}\overline{y_{2}}=\overline{\overline{w.\overline{y_{1}}\overline{y_{2}}}.\overline{\overline{w}.y_{1}\overline{y_{2}}}}$
+\par\end{center}
+
+\paragraph{Simplificación del bloque de salida}
+
+Para el bloque de salida el mapa de Karnaugh es el siguiente:
+\begin{center}
+\begin{figure}[H]
+\caption{Mapa de Karnaugh para la lógica de salida}
+\end{figure}
+\par\end{center}
+
+De los grupos elegidos se llega a la siguiente expresión para z:
+\begin{center}
+$z=w.y_{1}.y_{2}$
+\par\end{center}
+
+\subsubsection{Circuito equivalente}
+
+Utilizando las expresiones simplificadas para el bloque de entrada
+como para el de salida, y considerando que se necesitan dos variables
+de estado. Se puede llegar al circuito equivalente de la figura \ref{fig:Diagramas-de-estados-1}.Dicho
+circuito es el siguiente:
+\begin{center}
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{ImagenesEj2/Ej2Mealy}
+\par\end{centering}
+\caption{\label{fig:Circuito-elaborado-con-1}Circuito elaborado con nands}
+\end{figure}
+\par\end{center}
+
+\subsubsection{Simulación}
+
+A continuación se presenta una imagen de la simulación en GtkWave
+de la FSM implementada en Verilog utilizando unicamente compuertas
+nands siguiendo las conexiones presentadas en la figura \ref{fig:Circuito-elaborado-con-1}:
+\begin{center}
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{ImagenesEj2/Simgtk}
+\par\end{centering}
+\caption{Simulación en GtkWave de la FSM}
+\end{figure}
+\par\end{center}
+
+\section{Detector de flancos ascendentes}
+
+\subsection{Maquina de Moore}
+
+El diagrama de estados propuesto puede ser utilizado como un detector
+de flancos ascendentes. Donde solo se activa cuando el input cambia
+de $0$ a $1$, cambiando nuevamente a $0$ el clock siguiente, sin
+importar que la entrada sea $0$ o $1$. El diagrame de estados es
+el que se puede encontrar en la consigna, y asociado a este se tiene
+la siguiente tabla de estados:
+
+\begin{table}[H]
+\begin{centering}
+\begin{tabular}{|c|c|c||c|c||c|c|}
+\hline 
+\multicolumn{2}{|c|}{Estado Actual} & \multicolumn{4}{c|}{Próximo Estado} & Output \tabularnewline
+\hline 
+\multirow{2}{*}{Nombre} & \multirow{2}{*}{$y_{2}y_{1}$} & \multicolumn{2}{c|}{$w=0$} & \multicolumn{2}{c|}{$w=1$} & \multirow{2}{*}{$z$}\tabularnewline
+\cline{3-6} 
+ &  & \multicolumn{4}{c|}{$Y_{2}Y_{1}$} & \tabularnewline
+\hline 
+$A$ & $00$ & \multicolumn{2}{c|}{$00$} & \multicolumn{2}{c|}{$01$} & $0$\tabularnewline
+\hline 
+$B$ & $01$ & \multicolumn{2}{c|}{$00$} & \multicolumn{2}{c|}{$10$} & $1$\tabularnewline
+\hline 
+$C$ & $10$ & \multicolumn{2}{c|}{$00$} & \multicolumn{2}{c|}{$10$} & $0$\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption{Tabla de estados - Maquina de Moore}
+\end{table}
+Como en los problemas anteriores, se eligieron las variables de estado
+de manera que el circuito combinacional se vea innecesario, de manera
+que el output $z$ es:
+
+\[
+z=y_{1}
+\]
+
+Se resuelven los siguientes mapas de Karnaugh para encontrar el circuito
+combinacional a la entrada:
+
+\begin{figure}[H]
+	\begin{center}
+    	\begin{Karnaughvuit}
+			\contingut{0,0,0,d,0,1,1,d}
+      		\implicant{5}{7}{purple}
+       		\implicant{7}{6}{green}
+    	\end{Karnaughvuit}
+    \end{center}
+\caption{Mapa Karnaugh $Y_{2}$}
+\end{figure}
+\begin{figure}[H]
+	\begin{center}
+    	\begin{Karnaughvuit}
+			\contingut{0,0,0,d,1,0,0,d}
+      		\implicant{4}{4}{purple}
+    	\end{Karnaughvuit}
+    \end{center}
+\caption{Mapa Karnaugh $Y_{1}$}
+\end{figure}
+Lo cual se llega a las siguientes expresiones:
+
+$\begin{cases}
+Y_{1}=w\cdotp\overline{y_{1}}\cdotp\overline{y_{2}}\\
+Y_{2}=w\cdotp y_{1}+w\cdotp y_{2}=w\cdotp(y_{1}+y_{2})
+\end{cases}$
+
+El circuito correspondiente entonces sera:
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{mooreej3}
+\par\end{centering}
+\caption{Circuito - Maquina de Moore}
+\end{figure}
+Y su equivalente en compuertas NAND:
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.7]{Ej3Moore}
+\par\end{centering}
+\caption{Circuito Compuertas NAND - Maquina de Moore}
+\end{figure}
+A continuacion se realizó la simulación en Verilog, adjunta en la
+carpeta, la cual dio el siguiente resultado en GTKwave:
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.3]{GTKwaveej3}
+\par\end{centering}
+\caption{Simulación en GTKwave}
+\end{figure}
+Para finalizar, se realizo en placa este circuito, el esquematico
+es el siguiente:
+
+\begin{figure}[H]
+\caption{Esquematico}
+\end{figure}
+Y se realizó fisicamente:
+
+\begin{figure}[H]
+
+\caption{Placa}
+
+\end{figure}
+
+\subsection{Maquina de Mealy}
+
+\subsubsection{Diagrama de estados}
+
+A continuación se presenta el diagrama de los estados,transiciones
+y salidas correspondientes a cada transición para la maquina de estados
+que detecta flancos ascendentes:
+\begin{center}
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.6]{ImagenesEj3/DiagramaDeEstados}
+\par\end{centering}
+\caption{\label{fig:Diagramas-de-estados-2}Diagramas de estados planteado}
+\end{figure}
+\par\end{center}
+
+En el diagrama anterior la letra w simboliza el input del circuito
+mientras que z simboliza el output del mismo e 'y' simboliza el estado
+actual.
+
+\subsubsection{Representación en tabla}
+
+Representando el grafo de la figura \ref{fig:Diagramas-de-estados-2}
+en forma de tabla se llega a:
+\begin{center}
+\begin{table}[H]
+\begin{centering}
+\begin{tabular}{|cc|c|c|c|c|}
+\hline 
+Estado actual &  & \multicolumn{1}{c}{Proximo estado} &  & \multicolumn{1}{c}{z(Output)} & \tabularnewline
+\hline 
+\hline 
+ &  & w=0 & w=1 & w=0 & w=1\tabularnewline
+\hline 
+0 &  & 0 & 1 & 0 & 1\tabularnewline
+\hline 
+1 &  & 0 & 1 & 0 & 0\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption{FSM representada en tabla}
+\end{table}
+\par\end{center}
+
+\subsubsection{Lógica combinacional}
+
+De la tabla anterior se puede llegar a una tabla de verdad correspondiente
+a las salidas de los bloques de lógica combinacional del circuito.
+La tabla de verdad correspondiente es:El circuito tiene algunos elementos
+adicionales que podría no tener y seguir funcionando como detector
+de flancos. 
+\begin{center}
+\begin{table}[H]
+\begin{centering}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+w & y & z & Y\tabularnewline
+\hline 
+\hline 
+0 & 0 & 0 & 0\tabularnewline
+\hline 
+0 & 1 & 0 & 0\tabularnewline
+\hline 
+1 & 0 & 1 & 1\tabularnewline
+\hline 
+1 & 1 & 0 & 1\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption{\label{tab:Tabla-de-verdad-2}Tabla de verdad del circuito}
+\end{table}
+\par\end{center}
+
+Donde 'Y' es el proximo estado de la FSM.
+
+Se procedió a simplificar cada uno de los bloques de lógica combinacional
+mediante el uso de mapas de Karnaugh.Se analizara por un lado la simplificación
+del bloque de entrada y por otro la del bloque de salida.
+
+\paragraph{Simplificación del bloque de entrada}
+
+Utilizando la tabla \ref{tab:Tabla-de-verdad-2} se llega que el mapa
+de Karnaugh para la salida del primer bloque de lógica combinacional
+es:
+\begin{center}
+\begin{figure}[H]
+\caption{Mapas de Karnaugh para la lógica de entrada}
+\end{figure}
+\par\end{center}
+
+Con el grupo elegido el bloque de entrada queda sencillo y no se necesita
+compuerta alguna a la entrada ya que se tiene que:
+\begin{center}
+$y=w$
+\par\end{center}
+
+\paragraph{Simplificación del bloque de salida}
+
+Para el bloque de salida el mapa de Karnaugh es el siguiente:
+\begin{center}
+\begin{figure}[H]
+\caption{Mapa de Karnaugh para la lógica de salida}
+\end{figure}
+\par\end{center}
+
+De los grupos elegidos se llega a la siguiente expresión para z:
+\begin{center}
+$z=w.\overline{y}$
+\par\end{center}
+
+\subsubsection{Circuito equivalente}
+
+Utilizando las expresiones simplificadas para el bloque de entrada
+como para el de salida, y considerando que se necesitan dos variables
+de estado. Se puede llegar al circuito equivalente de la figura \ref{fig:Diagramas-de-estados-2}.Dicho
+circuito es el siguiente:
+\begin{center}
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{ImagenesEj3/Ej3Mealy}
+\par\end{centering}
+\caption{\label{fig:Circuito-elaborado-con-2}Circuito elaborado con nands}
+\end{figure}
+\par\end{center}
+
+Finalmente, el flip-flop a la salida es para que la salida del circuito
+sea sincrónica. El circuito tiene algunos elementos adicionales que
+podría no tener y seguir funcionando como detector de flancos, esto
+se analiza en la seccion 3.3.
+
+A continuación se muestra una imagen de la versión final del circuito
+elaborada en placa:
+\begin{center}
+\begin{figure}
+\caption{Implementación en PCB}
+\end{figure}
+\par\end{center}
+
+\subsubsection{Simulación}
+
+A continuación se presenta una imagen de la simulación en GtkWave
+de la FSM implementada en Verilog utilizando unicamente compuertas
+nands siguiendo las conexiones presentadas en la figura \ref{fig:Circuito-elaborado-con-2}:
+\begin{center}
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{ImagenesEj3/SimEJ3Mealy}
+\par\end{centering}
+\caption{Simulación en GtkWave de la FSM}
+\end{figure}
+\par\end{center}
+
+\subsection{Control de voltajes externo-interno}
+
+El diodo a la entrada es para llevar la entrada de 5V a 3.3V, en la
+practica se utilizó un diodo zenner de 3.3V en inversa. Los transistores
+mosfet a la salida son para que la salida del circuito sea de 5V como
+se pide, ya que la lógica interna del circuito funciona con 3.3V. 
+\end{document}
