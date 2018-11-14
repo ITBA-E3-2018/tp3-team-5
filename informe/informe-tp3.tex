@@ -352,11 +352,11 @@ correspondiente a una FSM de Moore es la siguiente:
 
 \end{figure}
 Como se puede ver en el diagrama, se utilizan dos circuitos combinacionales
-conformado por compuertas lógicas. El primero de ellos convierte el
+conformados por compuertas lógicas. El primero de ellos convierte el
 o los inputs del sistema y el estado actual de la FSM en el nuevo
-estado de la FSM. Ese nuevo estado se guarda en Flip-Flops, la cual
-cada Flip-Flop se denomina variable de estado. Las cuales se necesitan
-los suficientes como para representar en binario la cantidad de estados
+estado de la FSM. Ese nuevo estado se guarda en Flip-Flops,
+cada Flip-Flop se denomina variable de estado. De las cuales se necesitan
+las suficientes como para representar en binario la cantidad de estados
 que se tengan. El segundo circuito combinacional se utiliza para traducir
 el estado actual al o los outputs de la FSM en ese estado. La maquina
 de Mealy es muy similar, como se puede apreciar a continuación:
@@ -368,8 +368,8 @@ de Mealy es muy similar, como se puede apreciar a continuación:
 \caption{Diagrama de bloques - Maquina de Mealy}
 \end{figure}
 La única diferencia a la maquina de Moore, es que en el segundo circuito
-combinacional, ademas de el estado actual se tiene como input también
-a el input del circuito. De esta manera, según el problema, se puede
+combinacional, ademas del estado actual se tiene como input también
+al input del circuito. De esta manera, según el problema, se puede
 reducir considerablemente el circuito combinacional y hasta reducir
 la cantidad de estados de la FSM.
 
@@ -556,48 +556,16 @@ en forma de tabla se llega a:
 \begin{center}
 \begin{table}[H]
 \begin{centering}
-\begin{tabular}{|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
 \hline 
-Estado actual & Próximo estado & z(output)\tabularnewline
+Estado actual(y) & \multicolumn{4}{c|}{Proximo estado(Y)} & \multicolumn{4}{c|}{Output($B_{2}B_{1}$)}\tabularnewline
 \hline 
 \hline 
-y & Y & B2B1\tabularnewline
+ & w=00 & 01 & 10 & 11 & w=00 & 01 & 10 & 11\tabularnewline
 \hline 
- & \multicolumn{1}{c|}{%
-\begin{tabular}{|c|c|c|c|c|}
+0 & d & d & 1 & d & 11 & dd & 01 & 00\tabularnewline
 \hline 
-w= & 00 & 01 & 10 & 11\tabularnewline
-\hline 
-\end{tabular}} & %
-\begin{tabular}{|c|c|c|c|c|}
-\hline 
-w= & 00 & 01 & 10 & 11\tabularnewline
-\hline 
-\end{tabular}\tabularnewline
-\cline{1-1} 
-0 & %
-\begin{tabular}{|c|c|c|c|c|}
-\hline 
- & d & d & 1 & d\tabularnewline
-\hline 
-\end{tabular} & %
-\begin{tabular}{|c|c|c|c|c|}
-\hline 
- & 11 & dd & 01 & 00\tabularnewline
-\hline 
-\end{tabular}\tabularnewline
-\cline{1-1} 
-1 & %
-\begin{tabular}{|c|c|c|c|c|}
-\hline 
- & d & d & 0 & d\tabularnewline
-\hline 
-\end{tabular} & %
-\begin{tabular}{|c|c|c|c|c|}
-\hline 
- & 11 & dd & 10 & 00\tabularnewline
-\hline 
-\end{tabular}\tabularnewline
+1 & d & d & 0 & d & 11 & dd & 10 & 00\tabularnewline
 \hline 
 \end{tabular}
 \par\end{centering}
@@ -700,7 +668,7 @@ $B_{1}=\overline{I}+\overline{S}.\overline{y}=\overline{I.(S+y)}=\overline{I.\ov
 
 En ambos casos se busco escribir las salida en función de compuertas
 nands para que luego sea mas simple plantear el circuito equivalente
-unicamente en función de estas compuertas.
+únicamente en función de estas compuertas.
 
 \subsubsection{Circuito equivalente}
 
@@ -888,7 +856,7 @@ en forma de tabla se llega a:
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline 
 \multicolumn{1}{|c}{Estado actual} &  & 
-\multicolumn{1}{c}{Proximo estado} &  & 
+\multicolumn{1}{c}{Próximo estado} &  & 
 \multicolumn{1}{c}{z(Output)} & 
 \tabularnewline
 \hline 
@@ -1026,7 +994,7 @@ circuito es el siguiente:
 \subsubsection{Simulación}
 
 A continuación se presenta una imagen de la simulación en GtkWave
-de la FSM implementada en Verilog utilizando unicamente compuertas
+de la FSM implementada en Verilog utilizando únicamente compuertas
 nands siguiendo las conexiones presentadas en la figura \ref{fig:Circuito-elaborado-con-1}:
 \begin{center}
 \begin{figure}[H]
@@ -1137,7 +1105,7 @@ es el siguiente:
 \begin{center}
 	\includegraphics[scale=0.1]{IMG_4557.jpg}
 \end{center}
-\caption{Realizacion física}
+\caption{Realización física}
 \end{figure}
 
 \subsection{Maquina de Mealy}
@@ -1169,7 +1137,7 @@ en forma de tabla se llega a:
 \begin{centering}
 \begin{tabular}{|cc|c|c|c|c|}
 \hline 
-Estado actual &  & \multicolumn{1}{c}{Proximo estado} &  & \multicolumn{1}{c}{z(Output)} & \tabularnewline
+Estado actual &  & \multicolumn{1}{c}{Próximo estado} &  & \multicolumn{1}{c}{z(Output)} & \tabularnewline
 \hline 
 \hline 
  &  & w=0 & w=1 & w=0 & w=1\tabularnewline
@@ -1288,13 +1256,13 @@ elaborada en placa:
 \begin{center}
 	\includegraphics[scale=0.4]{Untitled.jpg}
 \end{center}
-\caption{Realizacion física}
+\caption{Realización física}
 \end{figure}
 
 \subsubsection{Simulación}
 
 A continuación se presenta una imagen de la simulación en GtkWave
-de la FSM implementada en Verilog utilizando unicamente compuertas
+de la FSM implementada en Verilog utilizando únicamente compuertas
 nands siguiendo las conexiones presentadas en la figura \ref{fig:Circuito-elaborado-con-2}:
 \begin{center}
 \begin{figure}[H]
@@ -1313,7 +1281,8 @@ mosfet a la salida son para que la salida del circuito sea de 5V como
 se pide, ya que la lógica interna del circuito funciona con 3.3V. 
 \section{Conclusión}
 
-terminar
+Como conclusión, se pudieron implementar exitosamente las tres maquinas de estado propuestas, tanto en su version de Moore como de Mealy.
+ La metodología aplicada fue la misma para los tres casos.En primer lugar se planteó el grafo con los estados y las transiciones de cada uno, del mismo se identifican el numero de variables de estados. A continuación se escriben los estados y sus transiciones en forma de tabla de la cual se identifica el bloque de lógica combinacional  de entrada y el de salida. Finalmente se empleó el método de minimización por mapas de Karnaugh para cada uno de los bloques de lógica combinacional para llegar a la implementación menor costo.
 
 \end{document}
 

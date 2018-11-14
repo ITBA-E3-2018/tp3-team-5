@@ -15,7 +15,6 @@
 \contentsline {subsubsection}{\numberline {2.2.1}Diagrama de estados}{10}
 \contentsline {subsubsection}{\numberline {2.2.2}Representaci\'on en tabla}{11}
 \contentsline {subsubsection}{\numberline {2.2.3}L\'ogica combinacional}{11}
-\contentsline {paragraph}{Simplificaci\'on del bloque de entrada}{11}
 \contentsline {paragraph}{Simplificaci\'on del bloque de entrada}{12}
 \contentsline {paragraph}{Simplificaci\'on del bloque de salida}{12}
 \contentsline {subsubsection}{\numberline {2.2.4}Circuito equivalente}{12}
