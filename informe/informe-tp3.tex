@@ -10,6 +10,13 @@
 \usepackage{graphicx}
 \usepackage{tikz}
 \usetikzlibrary{matrix,calc}
+\usepackage{fourier}
+\usepackage{diagbox}
+\usepackage{multirow}
+\usepackage[protrusion=true,expansion=true]{microtype}	
+\usepackage{amsmath,amsfonts,amsthm} % Math package	
+\usepackage{url}
+\usepackage{setspace}
 
 \makeatletter
 
@@ -98,6 +105,56 @@
 \end{tikzpicture}
 }
 
+\newenvironment{KarnaughEj1}%
+{
+\begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
+\draw (0,0) grid (4,4);
+\draw (0,4) -- node [pos=0.7,above right,anchor=south west] {$y_{2}y_{1}$} node [pos=0.7,below left,anchor=north east] {w} ++(135:1);
+%
+\matrix (mapa) [matrix of nodes,
+        column sep={0.8cm,between origins},
+        row sep={0.8cm,between origins},
+        every node/.style={minimum size=0.3mm},
+        anchor=8.center,
+        ampersand replacement=\&] at (0.5,0.5)
+{
+                       \& |(c00)| 00         \& |(c01)| 01         \& |(c11)| 11         \& |(c10)| 10         \& |(cf)| \phantom{00} \\
+|(r00)| 00             \& |(0)|  \phantom{0} \& |(1)|  \phantom{0} \& |(3)|  \phantom{0} \& |(2)|  \phantom{0} \&                     \\
+|(r01)| 01             \& |(4)|  \phantom{0} \& |(5)|  \phantom{0} \& |(7)|  \phantom{0} \& |(6)|  \phantom{0} \&                     \\
+|(r11)| 11             \& |(12)| \phantom{0} \& |(13)| \phantom{0} \& |(15)| \phantom{0} \& |(14)| \phantom{0} \&                     \\
+|(r10)| 10             \& |(8)|  \phantom{0} \& |(9)|  \phantom{0} \& |(11)| \phantom{0} \& |(10)| \phantom{0} \&                     \\
+|(rf) | \phantom{00}   \&                    \&                    \&                    \&                    \&                     \\
+};
+}%
+{
+\end{tikzpicture}
+}
+
+\newenvironment{KarnaughEj2Moore}%
+{
+\begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
+\draw (0,0) grid (4,4);
+\draw (0,4) -- node [pos=0.7,above right,anchor=south west]{$y_{2}y_{1}$} node [pos=0.7,below left,anchor=north east] {w$y_{3}$} ++(135:1);
+%
+\matrix (mapa) [matrix of nodes,
+        column sep={0.8cm,between origins},
+        row sep={0.8cm,between origins},
+        every node/.style={minimum size=0.3mm},
+        anchor=8.center,
+        ampersand replacement=\&] at (0.5,0.5)
+{
+                       \& |(c00)| 00         \& |(c01)| 01         \& |(c11)| 11         \& |(c10)| 10         \& |(cf)| \phantom{00} \\
+|(r00)| 00             \& |(0)|  \phantom{0} \& |(1)|  \phantom{0} \& |(3)|  \phantom{0} \& |(2)|  \phantom{0} \&                     \\
+|(r01)| 01             \& |(4)|  \phantom{0} \& |(5)|  \phantom{0} \& |(7)|  \phantom{0} \& |(6)|  \phantom{0} \&                     \\
+|(r11)| 11             \& |(12)| \phantom{0} \& |(13)| \phantom{0} \& |(15)| \phantom{0} \& |(14)| \phantom{0} \&                     \\
+|(r10)| 10             \& |(8)|  \phantom{0} \& |(9)|  \phantom{0} \& |(11)| \phantom{0} \& |(10)| \phantom{0} \&                     \\
+|(rf) | \phantom{00}   \&                    \&                    \&                    \&                    \&                     \\
+};
+}%
+{
+\end{tikzpicture}
+}
+
 %Empty Karnaugh map 2x4
 \newenvironment{Karnaughvuit}%
 {
@@ -122,12 +179,81 @@
 \end{tikzpicture}
 }
 
+\newenvironment{KarnaughvuitEj1}%
+{
+\begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
+\draw (0,0) grid (4,2);
+\draw (0,2) -- node [pos=0.7,above right,anchor=south west] {IS} node [pos=0.7,below left,anchor=north east] {y} ++(135:1);
+%
+\matrix (mapa) [matrix of nodes,
+        column sep={0.8cm,between origins},
+        row sep={0.8cm,between origins},
+        every node/.style={minimum size=0.3mm},
+        anchor=4.center,
+        ampersand replacement=\&] at (0.5,0.5)
+{
+                      \& |(c00)| 00         \& |(c01)| 01         \& |(c11)| 11         \& |(c10)| 10         \& |(cf)| \phantom{00} \\
+|(r00)| 0             \& |(0)|  \phantom{0} \& |(1)|  \phantom{0} \& |(3)|  \phantom{0} \& |(2)|  \phantom{0} \&                     \\
+|(r01)| 1             \& |(4)|  \phantom{0} \& |(5)|  \phantom{0} \& |(7)|  \phantom{0} \& |(6)|  \phantom{0} \&                     \\
+|(rf) | \phantom{00}  \&                    \&                    \&                    \&                    \&                     \\
+};
+}%
+{
+\end{tikzpicture}
+}
+
+\newenvironment{KarnaughvuitEj3}%
+{
+\begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
+\draw (0,0) grid (4,2);
+\draw (0,2) -- node [pos=0.7,above right,anchor=south west] {$y_{2}y_{1}$} node [pos=0.7,below left,anchor=north east] {w} ++(135:1);
+%
+\matrix (mapa) [matrix of nodes,
+        column sep={0.8cm,between origins},
+        row sep={0.8cm,between origins},
+        every node/.style={minimum size=0.3mm},
+        anchor=4.center,
+        ampersand replacement=\&] at (0.5,0.5)
+{
+                      \& |(c00)| 00         \& |(c01)| 01         \& |(c11)| 11         \& |(c10)| 10         \& |(cf)| \phantom{00} \\
+|(r00)| 0             \& |(0)|  \phantom{0} \& |(1)|  \phantom{0} \& |(3)|  \phantom{0} \& |(2)|  \phantom{0} \&                     \\
+|(r01)| 1             \& |(4)|  \phantom{0} \& |(5)|  \phantom{0} \& |(7)|  \phantom{0} \& |(6)|  \phantom{0} \&                     \\
+|(rf) | \phantom{00}  \&                    \&                    \&                    \&                    \&                     \\
+};
+}%
+{
+\end{tikzpicture}
+}
+
+\newenvironment{KarnaughvuitEj2Mealy}%
+{
+\begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
+\draw (0,0) grid (4,2);
+\draw (0,2) -- node [pos=0.7,above right,anchor=south west] {$y_{1}y_{2}$} node [pos=0.7,below left,anchor=north east] {w} ++(135:1);
+%
+\matrix (mapa) [matrix of nodes,
+        column sep={0.8cm,between origins},
+        row sep={0.8cm,between origins},
+        every node/.style={minimum size=0.3mm},
+        anchor=4.center,
+        ampersand replacement=\&] at (0.5,0.5)
+{
+                      \& |(c00)| 00         \& |(c01)| 01         \& |(c11)| 11         \& |(c10)| 10         \& |(cf)| \phantom{00} \\
+|(r00)| 0             \& |(0)|  \phantom{0} \& |(1)|  \phantom{0} \& |(3)|  \phantom{0} \& |(2)|  \phantom{0} \&                     \\
+|(r01)| 1             \& |(4)|  \phantom{0} \& |(5)|  \phantom{0} \& |(7)|  \phantom{0} \& |(6)|  \phantom{0} \&                     \\
+|(rf) | \phantom{00}  \&                    \&                    \&                    \&                    \&                     \\
+};
+}%
+{
+\end{tikzpicture}
+}
+
 %Empty Karnaugh map 2x2
 \newenvironment{Karnaughquatre}%
 {
 \begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
 \draw (0,0) grid (2,2);
-\draw (0,2) -- node [pos=0.7,above right,anchor=south west] {b} node [pos=0.7,below left,anchor=north east] {a} ++(135:1);
+\draw (0,2) -- node [pos=0.7,above right,anchor=south west] {y} node [pos=0.7,below left,anchor=north east] {w} ++(135:1);
 %
 \matrix (mapa) [matrix of nodes,
         column sep={0.8cm,between origins},
@@ -170,6 +296,44 @@
 }
 
 \begin{document}
+
+\begin{titlepage}
+	\centering
+	\includegraphics[width=0.15\textwidth]{logo.png}\par\vspace{1cm}
+	{\scshape\LARGE Instituto Tecnológico de Buenos Aires \par}
+	\vspace{1cm}
+	{\scshape\Large 22.13 Electrónica III\par}
+	\vspace{1.5cm}
+	{\huge\bfseries Trabajo Practico Nro 3\par}
+	\vspace{2cm}
+	{\Large\itshape \begin{flushleft} \large
+\emph{Grupo 5:}\\		%names
+[.3cm]
+Matías \textsc{Larroque}\\
+Leg. 56597\\ 
+[.3cm]
+Lucero Guadalupe \textsc{Fernandez}\\
+Leg. 57485\\ 
+[.3cm]
+Manuel \textsc{Mollón}\\
+Leg. 58023\\ 
+[.3cm]
+Ezequiel \textsc{Vijande}\\
+Leg. 58057\\ 
+[.3cm]
+\end{flushleft}\par}
+	\vfill
+	\large
+\emph{Profesores:} \\
+[.3cm]
+Kevin \textsc{Dewald} \\% Supervisor's Name
+Pablo \textsc{Wundes} \\
+	\vfill
+
+% Bottom of the page
+	{\large \today\par}
+\end{titlepage}
+
 \tableofcontents{}
 
 \pagebreak{}
@@ -306,23 +470,23 @@ mapas de Karnaugh:
 
 \begin{figure}[H]
 	\begin{center}
-    	\begin{Karnaugh}
+    	\begin{KarnaughEj1}
        		\contingut{1,1,1,1,d,d,d,d,1,0,1,1,0,0,0,0}
        		\implicant{0}{6}{blue}
        		\implicantcantons[2pt]{orange}
        		\implicantdaltbaix[3pt]{3}{10}{green}
-    	\end{Karnaugh}
+    	\end{KarnaughEj1}
     \end{center}
 \caption{Mapa Karnaugh $Y_{1}$}
 
 \end{figure}
 \begin{figure}[H]
 	\begin{center}
-    	\begin{Karnaugh}
+    	\begin{KarnaughEj1}
        		\contingut{1,1,1,1,d,d,d,d,0,1,0,0,0,0,0,0}
        		\implicant{0}{6}{blue}
        		\implicantdaltbaix[3pt]{1}{9}{green}  
-    	\end{Karnaugh}
+    	\end{KarnaughEj1}
     \end{center}
 \caption{Mapa Karnaugh $Y_{2}$}
 \end{figure}
@@ -487,6 +651,12 @@ de Karnaugh para la salida del primer bloque de lógica combinacional
 es:
 \begin{center}
 \begin{figure}[H]
+	\begin{center}
+    	\begin{KarnaughvuitEj1}
+			\contingut{d,d,1,d,d,d,0,d}
+      		\implicant{0}{2}{purple}
+    	\end{KarnaughvuitEj1}	
+	\end{center}
 \caption{Mapa de Karnaugh para la lógica de entrada}
 \end{figure}
 \par\end{center}
@@ -502,6 +672,18 @@ Como el circuito tiene dos salidas, $B_{2}$ y $B_{1}$, se planteo
 un mapa de Karnaugh para cada una. Dichos mapas son los siguientes:
 \begin{center}
 \begin{figure}[H]
+		\begin{center}
+    	\begin{KarnaughvuitEj1}
+			\contingut{1,d,0,0,1,d,1,0}
+      		\implicant{0}{5}{purple}
+       		\implicantcostats{4}{6}{green}
+    	\end{KarnaughvuitEj1}
+    	\begin{KarnaughvuitEj1}
+			\contingut{1,d,1,0,1,d,0,0}
+      		\implicant{0}{5}{purple}
+       		\implicantcostats{0}{2}{green}
+    	\end{KarnaughvuitEj1}	
+	\end{center}
 \caption{Mapas de Karnaugh para la lógica de salida}
 \end{figure}
 \par\end{center}
@@ -618,35 +800,35 @@ Karnaugh para encontrar el circuito combinacional a la entrada:
 
 \begin{figure}[H]
 	\begin{center}
-    	\begin{Karnaugh}
+    	\begin{KarnaughEj2Moore}
        		\contingut{0,0,1,0,0,d,d,d,1,0,0,0,0,d,d,d}
        		\implicant{1}{11}{blue}
        		\implicant{4}{14}{green}
        		\implicant{0}{5}{red}
        		\implicant{15}{10}{orange}
-    	\end{Karnaugh}
+    	\end{KarnaughEj2Moore}
     \end{center}
 \caption{Mapa Karnaugh $Y_{1}$}
 \end{figure}
 \begin{figure}[H]
 	\begin{center}
-		\begin{Karnaugh}
+		\begin{KarnaughEj2Moore}
        		\contingut{0,0,1,0,0,d,d,d,0,1,0,0,0,d,d,d}
        		\implicant{5}{15}{purple}
        		\implicant{7}{14}{green}
        		\implicant{13}{9}{red}
        		\implicant{2}{6}{blue}
-    	\end{Karnaugh}
+    	\end{KarnaughEj2Moore}
 	\end{center}
 \caption{Mapa Karnaugh $Y_{2}$}
 \end{figure}
 \begin{figure}[H]
 	\begin{center}
-    	\begin{Karnaugh}
+    	\begin{KarnaughEj2Moore}
        		\contingut{0,0,0,0,1,d,d,d,0,0,0,1,1,d,d,d}
        		\implicant{4}{14}{blue}
        		\implicant{15}{11}{green}
-    	\end{Karnaugh}
+    	\end{KarnaughEj2Moore}
 	\end{center}
 \caption{Mapa Karnaugh $Y_{3}$}
 \end{figure}
@@ -780,6 +962,18 @@ de Karnaugh para la salida del primer bloque de lógica combinacional
 es:
 \begin{center}
 \begin{figure}[H]
+	\begin{center}
+	    \begin{KarnaughvuitEj2Mealy}
+			\contingut{0,0,1,0,0,1,0,0}
+      		\implicant{5}{5}{purple}
+       		\implicant{2}{2}{purple}
+    	\end{KarnaughvuitEj2Mealy}
+    	\begin{KarnaughvuitEj2Mealy}
+			\contingut{0,0,1,0,1,0,0,0}
+      		\implicant{4}{4}{purple}
+       		\implicant{2}{2}{purple}
+    	\end{KarnaughvuitEj2Mealy}
+	\end{center}
 \caption{Mapas de Karnaugh para la lógica de entrada}
 \end{figure}
 \par\end{center}
@@ -799,6 +993,12 @@ $Y_{2}=w.\overline{y_{1}}.\overline{y_{2}}+\overline{w}y_{1}\overline{y_{2}}=\ov
 Para el bloque de salida el mapa de Karnaugh es el siguiente:
 \begin{center}
 \begin{figure}[H]
+	\begin{center}
+		\begin{KarnaughvuitEj2Mealy}
+			\contingut{0,0,0,0,0,0,0,1}
+      		\implicant{7}{7}{purple}
+    	\end{KarnaughvuitEj2Mealy}
+	\end{center}
 \caption{Mapa de Karnaugh para la lógica de salida}
 \end{figure}
 \par\end{center}
@@ -881,20 +1081,20 @@ combinacional a la entrada:
 
 \begin{figure}[H]
 	\begin{center}
-    	\begin{Karnaughvuit}
+    	\begin{KarnaughvuitEj3}
 			\contingut{0,0,0,d,0,1,1,d}
       		\implicant{5}{7}{purple}
        		\implicant{7}{6}{green}
-    	\end{Karnaughvuit}
+    	\end{KarnaughvuitEj3}
     \end{center}
 \caption{Mapa Karnaugh $Y_{2}$}
 \end{figure}
 \begin{figure}[H]
 	\begin{center}
-    	\begin{Karnaughvuit}
+    	\begin{KarnaughvuitEj3}
 			\contingut{0,0,0,d,1,0,0,d}
       		\implicant{4}{4}{purple}
-    	\end{Karnaughvuit}
+    	\end{KarnaughvuitEj3}
     \end{center}
 \caption{Mapa Karnaugh $Y_{1}$}
 \end{figure}
@@ -921,7 +1121,7 @@ Y su equivalente en compuertas NAND:
 \par\end{centering}
 \caption{Circuito Compuertas NAND - Maquina de Moore}
 \end{figure}
-A continuacion se realizó la simulación en Verilog, adjunta en la
+A continuación se realizó la simulación en Verilog, adjunta en la
 carpeta, la cual dio el siguiente resultado en GTKwave:
 
 \begin{figure}[H]
@@ -930,18 +1130,14 @@ carpeta, la cual dio el siguiente resultado en GTKwave:
 \par\end{centering}
 \caption{Simulación en GTKwave}
 \end{figure}
-Para finalizar, se realizo en placa este circuito, el esquematico
+Para finalizar, se realizo en placa este circuito, el resultado
 es el siguiente:
 
 \begin{figure}[H]
-\caption{Esquematico}
-\end{figure}
-Y se realizó fisicamente:
-
-\begin{figure}[H]
-
-\caption{Placa}
-
+\begin{center}
+	\includegraphics[scale=0.1]{IMG_4557.jpg}
+\end{center}
+\caption{Realizacion física}
 \end{figure}
 
 \subsection{Maquina de Mealy}
@@ -1017,7 +1213,7 @@ w & y & z & Y\tabularnewline
 \end{table}
 \par\end{center}
 
-Donde 'Y' es el proximo estado de la FSM.
+Donde 'Y' es el próximo estado de la FSM.
 
 Se procedió a simplificar cada uno de los bloques de lógica combinacional
 mediante el uso de mapas de Karnaugh.Se analizara por un lado la simplificación
@@ -1030,7 +1226,13 @@ de Karnaugh para la salida del primer bloque de lógica combinacional
 es:
 \begin{center}
 \begin{figure}[H]
-\caption{Mapas de Karnaugh para la lógica de entrada}
+	\begin{center}
+		\begin{Karnaughquatre}
+			\contingut{0,0,1,1}
+       		\implicant{2}{3}{green}
+    	\end{Karnaughquatre}
+	\end{center}
+\caption{Mapa de Karnaugh para la lógica de entrada}
 \end{figure}
 \par\end{center}
 
@@ -1045,6 +1247,12 @@ $y=w$
 Para el bloque de salida el mapa de Karnaugh es el siguiente:
 \begin{center}
 \begin{figure}[H]
+	\begin{center}
+		\begin{Karnaughquatre}
+			\contingut{0,0,1,0}
+       		\implicant{2}{2}{green}
+    	\end{Karnaughquatre}
+	\end{center}
 \caption{Mapa de Karnaugh para la lógica de salida}
 \end{figure}
 \par\end{center}
@@ -1072,15 +1280,16 @@ circuito es el siguiente:
 Finalmente, el flip-flop a la salida es para que la salida del circuito
 sea sincrónica. El circuito tiene algunos elementos adicionales que
 podría no tener y seguir funcionando como detector de flancos, esto
-se analiza en la seccion 3.3.
+se analiza en la sección 3.3.
 
 A continuación se muestra una imagen de la versión final del circuito
 elaborada en placa:
+\begin{figure}[H]
 \begin{center}
-\begin{figure}
-\caption{Implementación en PCB}
+	\includegraphics[scale=0.4]{Untitled.jpg}
+\end{center}
+\caption{Realizacion física}
 \end{figure}
-\par\end{center}
 
 \subsubsection{Simulación}
 
@@ -1099,7 +1308,13 @@ nands siguiendo las conexiones presentadas en la figura \ref{fig:Circuito-elabor
 \subsection{Control de voltajes externo-interno}
 
 El diodo a la entrada es para llevar la entrada de 5V a 3.3V, en la
-practica se utilizó un diodo zenner de 3.3V en inversa. Los transistores
+practica se utilizó un diodo Zener de 3.3V en inversa. Los transistores
 mosfet a la salida son para que la salida del circuito sea de 5V como
 se pide, ya que la lógica interna del circuito funciona con 3.3V. 
+\section{Conclusión}
+
+terminar
+
 \end{document}
+
+

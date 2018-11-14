@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500) (preloaded format=pdflatex 2018.4.24)  6 NOV 2018 23:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500) (preloaded format=pdflatex 2018.3.20)  14 NOV 2018 16:19
 entering extended mode
 **./informe-tp3.tex
 (informe-tp3.tex
@@ -469,6 +469,340 @@ File: tikzlibrarymatrix.code.tex 2013/07/12 v3.0.1a (rcs-revision 1.4)
 s\tikzlibrarycalc.code.tex"
 File: tikzlibrarycalc.code.tex 2013/07/15 v3.0.1a (rcs-revision 1.9)
 )
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fourier\fourier.sty"
+Package: fourier 2005/01/01 1.4 fourier-GUTenberg package
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.def"
+File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\textcomp.sty"
+Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1enc.def"
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+)
+LaTeX Info: Redefining \oldstylenums on input line 334.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
+Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fourier\fourier-orns.sty"
+Package: fourier-orns 2004/01/30 1.1 fourier-ornaments package
+)
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 50.
+LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
+(Font)              `operators' in the math version `normal' on input line 50.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> T1/futs/m/n on input line 50.
+LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
+(Font)              `operators' in the math version `bold' on input line 50.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> T1/futs/m/n on input line 50.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  T1/futs/m/n --> T1/futs/b/n on input line 51.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 59.
+LaTeX Font Info:    Encoding `OML' has changed to `FML' for symbol font
+(Font)              `letters' in the math version `normal' on input line 59.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> FML/futmi/m/it on input line 59.
+LaTeX Font Info:    Encoding `OML' has changed to `FML' for symbol font
+(Font)              `letters' in the math version `bold' on input line 59.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> FML/futmi/m/it on input line 59.
+\symotherletters=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  FML/futmi/m/it --> FML/futmi/b/it on input line 61.
+LaTeX Font Info:    Overwriting symbol font `otherletters' in version `bold'
+(Font)                  FML/futm/m/it --> FML/futm/b/it on input line 62.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 63.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 64.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 65.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 66.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 67.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 68.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 69.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 70.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 71.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 72.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 73.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 113.
+LaTeX Font Info:    Encoding `OMS' has changed to `FMS' for symbol font
+(Font)              `symbols' in the math version `normal' on input line 113.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> FMS/futm/m/n on input line 113.
+LaTeX Font Info:    Encoding `OMS' has changed to `FMS' for symbol font
+(Font)              `symbols' in the math version `bold' on input line 113.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> FMS/futm/m/n on input line 113.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 114.
+LaTeX Font Info:    Encoding `OMX' has changed to `FMX' for symbol font
+(Font)              `largesymbols' in the math version `normal' on input line 1
+14.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> FMX/futm/m/n on input line 114.
+LaTeX Font Info:    Encoding `OMX' has changed to `FMX' for symbol font
+(Font)              `largesymbols' in the math version `bold' on input line 114
+.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> FMX/futm/m/n on input line 114.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 115.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> T1/futs/bx/n on input line 115.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> T1/futs/bx/n on input line 115.
+LaTeX Font Info:    Redeclaring math alphabet \mathrm on input line 116.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 117.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> T1/futs/m/it on input line 117.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> T1/futs/m/it on input line 117.
+LaTeX Font Info:    Redeclaring math alphabet \mathcal on input line 118.
+LaTeX Font Info:    Redeclaring math symbol \parallel on input line 134.
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 148.
+LaTeX Font Info:    Redeclaring math symbol \varkappa on input line 186.
+LaTeX Font Info:    Redeclaring math symbol \varvarrho on input line 187.
+LaTeX Font Info:    Redeclaring math delimiter \Vert on input line 210.
+LaTeX Font Info:    Redeclaring math delimiter \vert on input line 215.
+LaTeX Font Info:    Redeclaring math delimiter \lvert on input line 217.
+LaTeX Font Info:    Redeclaring math delimiter \rvert on input line 219.
+LaTeX Font Info:    Redeclaring math delimiter \lVert on input line 221.
+LaTeX Font Info:    Redeclaring math delimiter \rVert on input line 223.
+LaTeX Font Info:    Redeclaring math delimiter \Downarrow on input line 225.
+LaTeX Font Info:    Redeclaring math delimiter \backslash on input line 227.
+LaTeX Font Info:    Redeclaring math delimiter \rangle on input line 229.
+LaTeX Font Info:    Redeclaring math delimiter \langle on input line 231.
+LaTeX Font Info:    Redeclaring math delimiter \rbrace on input line 233.
+LaTeX Font Info:    Redeclaring math delimiter \lbrace on input line 235.
+LaTeX Font Info:    Redeclaring math delimiter \rceil on input line 237.
+LaTeX Font Info:    Redeclaring math delimiter \lceil on input line 239.
+LaTeX Font Info:    Redeclaring math delimiter \rfloor on input line 241.
+LaTeX Font Info:    Redeclaring math delimiter \lfloor on input line 243.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 247.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 248.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 249.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 250.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 251.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 252.
+LaTeX Font Info:    Redeclaring math accent \check on input line 253.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 254.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 255.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 256.
+\symUfutm=\mathgroup5
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\diagbox\diagbox.sty"
+Package: diagbox 2016/12/28 v2.2 Making table heads with diagonal lines
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pict2e\pict2e.sty"
+Package: pict2e 2016/02/05 v0.3b Improved picture commands (HjG,RN,JT)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pict2e\pict2e.cfg"
+File: pict2e.cfg 2016/02/05 v0.1u pict2e configuration for teTeX/TeXLive
+)
+Package pict2e Info: Driver file: pdftex.def on input line 119.
+Package pict2e Info: Driver file for pict2e: p2e-pdftex.def on input line 121.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pict2e\p2e-pdftex.def"
+File: p2e-pdftex.def 2016/02/05 v0.1u Driver-dependant file (RN,HjG,JT)
+)
+\pIIe@GRAPH=\toks38
+\@arclen=\dimen171
+\@arcrad=\dimen172
+\@tempdimd=\dimen173
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp.sty"
+Package: fp 1995/04/02
+
+`Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\defpattern.sty"
+Package: defpattern 1994/10/12
+\actioncount=\count123
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp-basic.sty"
+Package: fp-basic 1996/05/13
+\FP@xs=\count124
+\FP@xia=\count125
+\FP@xib=\count126
+\FP@xfa=\count127
+\FP@xfb=\count128
+\FP@rega=\count129
+\FP@regb=\count130
+\FP@regs=\count131
+\FP@times=\count132
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp-addons.sty"
+Package: fp-addons 1995/03/15
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp-snap.sty"
+Package: fp-snap 1995/04/05
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp-exp.sty"
+Package: fp-exp 1995/04/03
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp-trigo.sty"
+Package: fp-trigo 1995/04/14
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp-pas.sty"
+Package: fp-pas 1994/08/29
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp-random.sty"
+Package: fp-random 1995/02/23
+\FPseed=\count133
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp-eqn.sty"
+Package: fp-eqn 1995/04/03
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp-upn.sty"
+Package: fp-upn 1996/10/21
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp-eval.sty"
+Package: fp-eval 1995/04/03
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\calc.sty"
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count134
+\calc@Bcount=\count135
+\calc@Adimen=\dimen174
+\calc@Bdimen=\dimen175
+\calc@Askip=\skip50
+\calc@Bskip=\skip51
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count136
+\calc@Cskip=\skip52
+)
+\diagbox@boxa=\box41
+\diagbox@boxb=\box42
+\diagbox@boxm=\box43
+\diagbox@wd=\dimen176
+\diagbox@ht=\dimen177
+\diagbox@insepl=\dimen178
+\diagbox@insepr=\dimen179
+\diagbox@outsepl=\dimen180
+\diagbox@outsepr=\dimen181
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\microtype\microtype.sty"
+Package: microtype 2018/01/14 v2.7a Micro-typographical refinements (RS)
+\MT@toks=\toks39
+\MT@count=\count137
+LaTeX Info: Redefining \textls on input line 793.
+\MT@outer@kern=\dimen182
+LaTeX Info: Redefining \textmicrotypecontext on input line 1339.
+\MT@listname@count=\count138
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\microtype\microtype-pdftex.def"
+File: microtype-pdftex.def 2018/01/14 v2.7a Definitions specific to pdftex (RS)
+
+LaTeX Info: Redefining \lsstyle on input line 913.
+LaTeX Info: Redefining \lslig on input line 913.
+\MT@outer@space=\skip53
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\microtype\microtype.cfg"
+File: microtype.cfg 2018/01/14 v2.7a microtype main configuration file (RS)
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup6
+\symAMSb=\mathgroup7
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+LaTeX Font Info:    Redeclaring math symbol \square on input line 141.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amscls\amsthm.sty"
+Package: amsthm 2015/03/04 v2.20.2
+\thm@style=\toks40
+\thm@bodyfont=\toks41
+\thm@headfont=\toks42
+\thm@notefont=\toks43
+\thm@headpunct=\toks44
+\thm@preskip=\skip54
+\thm@postskip=\skip55
+\thm@headsep=\skip56
+\dth@everypar=\toks45
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\url\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\setspace\setspace.sty"
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.sty"
 Package: babel 2017/11/03 3.15 The Babel package
 
@@ -491,8 +825,8 @@ File: babel.def 2017/11/03 3.15 Babel common definitions
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\switch.def"
 File: switch.def 2017/11/03 3.15 Babel switching mechanism
 )
-\babel@savecnt=\count123
-\U@D=\dimen171
+\babel@savecnt=\count139
+\U@D=\dimen183
 )
 \l@canadian = a dialect from \language\l@american 
 \l@australian = a dialect from \language\l@british 
@@ -500,8 +834,8 @@ File: switch.def 2017/11/03 3.15 Babel switching mechanism
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\babel-spanish\spanish.ldf"
 Language: spanish.ldf 2016/03/03 v5.0p Spanish support from the babel system
-\es@quottoks=\toks38
-\es@quotdepth=\count124
+\es@quottoks=\toks46
+\es@quotdepth=\count140
 Package babel Info: Making " an active character on input line 561.
 Package babel Info: Making . an active character on input line 662.
 Package babel Info: Making < an active character on input line 707.
@@ -513,19 +847,56 @@ LaTeX Info: Redefining \% on input line 6.
 )
 \openout1 = `informe-tp3.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 298.
+LaTeX Font Info:    Try loading font information for FML+futm on input line 298
+.
 
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fourier\fmlfutm.fd"
+File: fmlfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futm.
+)
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 298.
+LaTeX Font Info:    Try loading font information for FMS+futm on input line 298
+.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fourier\fmsfutm.fd"
+File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
+)
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 298.
+LaTeX Font Info:    Try loading font information for FMX+futm on input line 298
+.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fourier\fmxfutm.fd"
+File: fmxfutm.fd futm-extension
+)
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 298.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 298.
+
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Try loading font information for T1+futs on input line 298.
+
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fourier\t1futs.fd"
+File: t1futs.fd 2004/03/02 Fontinst v1.926 font definitions for T1/futs.
+)
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 
@@ -566,17 +937,17 @@ Package geometry Warning: The marginal notes overrun the paper.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count125
-\scratchdimen=\dimen172
-\scratchbox=\box41
-\nofMPsegments=\count126
-\nofMParguments=\count127
-\everyMPshowfont=\toks39
-\MPscratchCnt=\count128
-\MPscratchDim=\dimen173
-\MPnumerator=\count129
-\makeMPintoPDFobject=\count130
-\everyMPtoPDFconversion=\toks40
+\scratchcounter=\count141
+\scratchdimen=\dimen184
+\scratchbox=\box44
+\nofMPsegments=\count142
+\nofMParguments=\count143
+\everyMPshowfont=\toks47
+\MPscratchCnt=\count144
+\MPscratchDim=\dimen185
+\MPnumerator=\count145
+\makeMPintoPDFobject=\count146
+\everyMPtoPDFconversion=\toks48
 ) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -626,206 +997,279 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
 ABD: EveryShipout initializing macros
-LaTeX Info: Redefining \. on input line 172.
-LaTeX Info: Redefining \% on input line 172.
+LaTeX Info: Redefining \microtypecontext on input line 298.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `basictext'.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `futs' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Info: Redefining \. on input line 298.
+LaTeX Info: Redefining \% on input line 298.
+<logo.png, id=4, 225.84375pt x 88.07906pt>
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 302. on input line 302.
+Package pdftex.def Info: Requested size: 75.06953pt x 29.27718pt on input line 
+302.
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <20.74> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 307.
+ [1
+
+{C:/Users/Manuel Mollon/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./l
+ogo.png>]
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 337.
  (informe-tp3.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 2.
+LaTeX Font Info:    Try loading font information for FML+futmi on input line 3.
+
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fourier\fmlfutmi.fd"
+File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
 )
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 9.19998pt on input line 3.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 6.99199pt on input line 3.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 3.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 9.19998pt on input line 3.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 6.99199pt on input line 3.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 3.
+LaTeX Font Info:    Try loading font information for U+msa on input line 3.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\microtype\mt-msa.cfg"
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 3.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\microtype\mt-msb.cfg"
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+))
 \tf@toc=\write4
 \openout4 = `informe-tp3.toc'.
 
- [1
-
-{C:/Users/Ezequiel PC/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-<moore.png, id=11, 743.02594pt x 257.46187pt>
+ [1]
+<moore.png, id=17, 743.02594pt x 257.46187pt>
 File: moore.png Graphic file (type png)
 <use moore.png>
-Package pdftex.def Info: moore.png  used on input line 185. on input line 185.
+Package pdftex.def Info: moore.png  used on input line 349. on input line 349.
 Package pdftex.def Info: Requested size: 371.51205pt x 128.7306pt on input line
- 185.
-<mealy.png, id=12, 594.42075pt x 205.9695pt>
+ 349.
+<mealy.png, id=18, 594.42075pt x 205.9695pt>
 File: mealy.png Graphic file (type png)
 <use mealy.png>
-Package pdftex.def Info: mealy.png  used on input line 202. on input line 202.
+Package pdftex.def Info: mealy.png  used on input line 366. on input line 366.
 Package pdftex.def Info: Requested size: 297.20964pt x 102.98448pt on input lin
-e 202.
- [2 <./moore.png> <./mealy.png>]
-<ej1-CircuitoMoore.png, id=17, 571.13374pt x 538.01pt>
+e 366.
+
+[2 <./moore.png> <./mealy.png>]
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <12> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 393.
+<ej1-CircuitoMoore.png, id=22, 571.13374pt x 538.01pt>
 File: ej1-CircuitoMoore.png Graphic file (type png)
 <use ej1-CircuitoMoore.png>
-Package pdftex.def Info: ej1-CircuitoMoore.png  used on input line 263. on inpu
-t line 263.
+Package pdftex.def Info: ej1-CircuitoMoore.png  used on input line 427. on inpu
+t line 427.
 Package pdftex.def Info: Requested size: 285.56618pt x 269.00433pt on input lin
-e 263.
+e 427.
  [3 <./ej1-CircuitoMoore.png>]
-<mooreej1circ.png, id=27, 901.3675pt x 502.87875pt>
+<mooreej1circ.png, id=28, 901.3675pt x 502.87875pt>
 File: mooreej1circ.png Graphic file (type png)
 <use mooreej1circ.png>
-Package pdftex.def Info: mooreej1circ.png  used on input line 340. on input lin
-e 340.
+Package pdftex.def Info: mooreej1circ.png  used on input line 504. on input lin
+e 504.
 Package pdftex.def Info: Requested size: 450.68263pt x 251.43875pt on input lin
-e 340.
+e 504.
  [4]
 <Ej1Moore.jpg, id=33, 521.69907pt x 304.13625pt>
 File: Ej1Moore.jpg Graphic file (type jpg)
 <use Ej1Moore.jpg>
-Package pdftex.def Info: Ej1Moore.jpg  used on input line 349. on input line 34
-9.
+Package pdftex.def Info: Ej1Moore.jpg  used on input line 513. on input line 51
+3.
 Package pdftex.def Info: Requested size: 365.18684pt x 212.8939pt on input line
- 349.
+ 513.
 <GTKwaveEj1.png, id=34, 1400.23125pt x 178.6675pt>
 File: GTKwaveEj1.png Graphic file (type png)
 <use GTKwaveEj1.png>
-Package pdftex.def Info: GTKwaveEj1.png  used on input line 359. on input line 
-359.
+Package pdftex.def Info: GTKwaveEj1.png  used on input line 523. on input line 
+523.
 Package pdftex.def Info: Requested size: 420.07262pt x 53.60065pt on input line
- 359.
+ 523.
  [5 <./mooreej1circ.png> <./Ej1Moore.jpg> <./GTKwaveEj1.png>]
 <ImagenesEj1/DiagramaDeEstados.jpg, id=40, 411.03563pt x 190.46156pt>
 File: ImagenesEj1/DiagramaDeEstados.jpg Graphic file (type jpg)
 <use ImagenesEj1/DiagramaDeEstados.jpg>
 Package pdftex.def Info: ImagenesEj1/DiagramaDeEstados.jpg  used on input line 
-375. on input line 375.
+539. on input line 539.
 Package pdftex.def Info: Requested size: 246.62328pt x 114.2778pt on input line
- 375.
+ 539.
  [6 <./ImagenesEj1/DiagramaDeEstados.jpg>]
-<ImagenesEj1/Ej1Mealy.jpg, id=44, 481.04718pt x 213.79875pt>
+<ImagenesEj1/Ej1Mealy.jpg, id=45, 481.04718pt x 213.79875pt>
 File: ImagenesEj1/Ej1Mealy.jpg Graphic file (type jpg)
 <use ImagenesEj1/Ej1Mealy.jpg>
-Package pdftex.def Info: ImagenesEj1/Ej1Mealy.jpg  used on input line 533. on i
-nput line 533.
+Package pdftex.def Info: ImagenesEj1/Ej1Mealy.jpg  used on input line 715. on i
+nput line 715.
 Package pdftex.def Info: Requested size: 240.523pt x 106.89911pt on input line 
-533.
- [7 <./ImagenesEj1/Ej1Mealy.jpg>]
+715.
+ [7]
 <ImagenesEj1/SimEj1Mealy.png, id=49, 629.35126pt x 127.22531pt>
 File: ImagenesEj1/SimEj1Mealy.png Graphic file (type png)
 <use ImagenesEj1/SimEj1Mealy.png>
-Package pdftex.def Info: ImagenesEj1/SimEj1Mealy.png  used on input line 560. o
-n input line 560.
+Package pdftex.def Info: ImagenesEj1/SimEj1Mealy.png  used on input line 742. o
+n input line 742.
 Package pdftex.def Info: Requested size: 314.67485pt x 63.61249pt on input line
- 560.
+ 742.
 <diagramaEj2.png, id=50, 771.88374pt x 206.7725pt>
 File: diagramaEj2.png Graphic file (type png)
 <use diagramaEj2.png>
-Package pdftex.def Info: diagramaEj2.png  used on input line 578. on input line
- 578.
+Package pdftex.def Info: diagramaEj2.png  used on input line 760. on input line
+ 760.
 Package pdftex.def Info: Requested size: 385.94092pt x 103.38599pt on input lin
-e 578.
- [8 <./ImagenesEj1/SimEj1Mealy.png> <./diagramaEj2.png>]
-<Ej2Moore.jpg, id=55, 475.7775pt x 319.1925pt>
+e 760.
+ [8 <./ImagenesEj1/Ej1Mealy.jpg> <./ImagenesEj1/SimEj1Mealy.png> <./diagramaEj2
+.png>] [9]
+<Ej2Moore.jpg, id=58, 475.7775pt x 319.1925pt>
 File: Ej2Moore.jpg Graphic file (type jpg)
 <use Ej2Moore.jpg>
-Package pdftex.def Info: Ej2Moore.jpg  used on input line 665. on input line 66
-5.
+Package pdftex.def Info: Ej2Moore.jpg  used on input line 847. on input line 84
+7.
 Package pdftex.def Info: Requested size: 333.04196pt x 223.43321pt on input lin
-e 665.
-
-[9]
+e 847.
 <GTKwaveej2.png, id=59, 1510.64375pt x 133.49875pt>
 File: GTKwaveej2.png Graphic file (type png)
 <use GTKwaveej2.png>
-Package pdftex.def Info: GTKwaveej2.png  used on input line 674. on input line 
-674.
+Package pdftex.def Info: GTKwaveej2.png  used on input line 856. on input line 
+856.
 Package pdftex.def Info: Requested size: 453.19662pt x 40.04991pt on input line
- 674.
+ 856.
 <ImagenesEj2/DiagramaDeEstados.jpg, id=60, 426.09187pt x 306.39468pt>
 File: ImagenesEj2/DiagramaDeEstados.jpg Graphic file (type jpg)
 <use ImagenesEj2/DiagramaDeEstados.jpg>
 Package pdftex.def Info: ImagenesEj2/DiagramaDeEstados.jpg  used on input line 
-689. on input line 689.
+871. on input line 871.
 Package pdftex.def Info: Requested size: 255.65709pt x 183.83823pt on input lin
-e 689.
- [10 <./Ej2Moore.jpg> <./GTKwaveej2.png> <./ImagenesEj2/DiagramaDeEstados.jpg>]
- [11]
+e 871.
+ [10 <./Ej2Moore.jpg> <./GTKwaveej2.png>] [11 <./ImagenesEj2/DiagramaDeEstados.
+jpg>]
 <ImagenesEj2/Ej2Mealy.jpg, id=68, 503.63156pt x 281.55188pt>
 File: ImagenesEj2/Ej2Mealy.jpg Graphic file (type jpg)
 <use ImagenesEj2/Ej2Mealy.jpg>
-Package pdftex.def Info: ImagenesEj2/Ej2Mealy.jpg  used on input line 820. on i
-nput line 820.
+Package pdftex.def Info: ImagenesEj2/Ej2Mealy.jpg  used on input line 1020. on 
+input line 1020.
 Package pdftex.def Info: Requested size: 251.81516pt x 140.77559pt on input lin
-e 820.
-<ImagenesEj2/Simgtk.png, id=69, 645.91313pt x 112.92188pt>
+e 1020.
+ [12]
+<ImagenesEj2/Simgtk.png, id=73, 645.91313pt x 112.92188pt>
 File: ImagenesEj2/Simgtk.png Graphic file (type png)
 <use ImagenesEj2/Simgtk.png>
-Package pdftex.def Info: ImagenesEj2/Simgtk.png  used on input line 834. on inp
-ut line 834.
+Package pdftex.def Info: ImagenesEj2/Simgtk.png  used on input line 1034. on in
+put line 1034.
 Package pdftex.def Info: Requested size: 322.95578pt x 56.46078pt on input line
- 834.
- [12 <./ImagenesEj2/Ej2Mealy.jpg> <./ImagenesEj2/Simgtk.png>]
-<mooreej3.png, id=73, 700.6175pt x 457.71pt>
+ 1034.
+ [13 <./ImagenesEj2/Ej2Mealy.jpg> <./ImagenesEj2/Simgtk.png>]
+<mooreej3.png, id=77, 700.6175pt x 457.71pt>
 File: mooreej3.png Graphic file (type png)
 <use mooreej3.png>
-Package pdftex.def Info: mooreej3.png  used on input line 912. on input line 91
-2.
+Package pdftex.def Info: mooreej3.png  used on input line 1112. on input line 1
+112.
 Package pdftex.def Info: Requested size: 350.30789pt x 228.85445pt on input lin
-e 912.
- [13]
+e 1112.
 <Ej3Moore.jpg, id=78, 524.71031pt x 320.69812pt>
 File: Ej3Moore.jpg Graphic file (type jpg)
 <use Ej3Moore.jpg>
-Package pdftex.def Info: Ej3Moore.jpg  used on input line 920. on input line 92
-0.
+Package pdftex.def Info: Ej3Moore.jpg  used on input line 1120. on input line 1
+120.
 Package pdftex.def Info: Requested size: 367.29471pt x 224.48714pt on input lin
-e 920.
-<GTKwaveej3.png, id=79, 1334.9875pt x 137.51375pt>
+e 1120.
+ [14 <./mooreej3.png>]
+<GTKwaveej3.png, id=83, 1334.9875pt x 137.51375pt>
 File: GTKwaveej3.png Graphic file (type png)
 <use GTKwaveej3.png>
-Package pdftex.def Info: GTKwaveej3.png  used on input line 929. on input line 
-929.
+Package pdftex.def Info: GTKwaveej3.png  used on input line 1129. on input line
+ 1129.
 Package pdftex.def Info: Requested size: 400.49934pt x 41.25444pt on input line
- 929.
-
-[14 <./mooreej3.png> <./Ej3Moore.jpg> <./GTKwaveej3.png>]
+ 1129.
+<IMG_4557.jpg, id=84, 2204.235pt x 1361.83781pt>
+File: IMG_4557.jpg Graphic file (type jpg)
+<use IMG_4557.jpg>
+Package pdftex.def Info: IMG_4557.jpg  used on input line 1138. on input line 1
+138.
+Package pdftex.def Info: Requested size: 220.43642pt x 136.19176pt on input lin
+e 1138.
 <ImagenesEj3/DiagramaDeEstados.jpg, id=85, 347.04657pt x 156.585pt>
 File: ImagenesEj3/DiagramaDeEstados.jpg Graphic file (type jpg)
 <use ImagenesEj3/DiagramaDeEstados.jpg>
 Package pdftex.def Info: ImagenesEj3/DiagramaDeEstados.jpg  used on input line 
-957. on input line 957.
+1153. on input line 1153.
 Package pdftex.def Info: Requested size: 208.22954pt x 93.95172pt on input line
- 957.
- [15 <./ImagenesEj3/DiagramaDeEstados.jpg>]
-<ImagenesEj3/Ej3Mealy.jpg, id=89, 510.40688pt x 157.33781pt>
+ 1153.
+ [15 <./Ej3Moore.jpg> <./GTKwaveej3.png> <./IMG_4557.jpg>] [16 <./ImagenesEj3/D
+iagramaDeEstados.jpg>]
+<ImagenesEj3/Ej3Mealy.jpg, id=93, 510.40688pt x 157.33781pt>
 File: ImagenesEj3/Ej3Mealy.jpg Graphic file (type jpg)
 <use ImagenesEj3/Ej3Mealy.jpg>
-Package pdftex.def Info: ImagenesEj3/Ej3Mealy.jpg  used on input line 1066. on 
-input line 1066.
+Package pdftex.def Info: ImagenesEj3/Ej3Mealy.jpg  used on input line 1274. on 
+input line 1274.
 Package pdftex.def Info: Requested size: 255.2028pt x 78.6687pt on input line 1
-066.
-<ImagenesEj3/SimEJ3Mealy.png, id=90, 651.93562pt x 143.03438pt>
+274.
+<Untitled.jpg, id=94, 563.85657pt x 316.93407pt>
+File: Untitled.jpg Graphic file (type jpg)
+<use Untitled.jpg>
+Package pdftex.def Info: Untitled.jpg  used on input line 1289. on input line 1
+289.
+Package pdftex.def Info: Requested size: 225.53864pt x 126.77138pt on input lin
+e 1289.
+ [17 <./ImagenesEj3/Ej3Mealy.jpg>]
+<ImagenesEj3/SimEJ3Mealy.png, id=98, 651.93562pt x 143.03438pt>
 File: ImagenesEj3/SimEJ3Mealy.png Graphic file (type png)
 <use ImagenesEj3/SimEJ3Mealy.png>
-Package pdftex.def Info: ImagenesEj3/SimEJ3Mealy.png  used on input line 1093. 
-on input line 1093.
+Package pdftex.def Info: ImagenesEj3/SimEJ3Mealy.png  used on input line 1302. 
+on input line 1302.
 Package pdftex.def Info: Requested size: 325.96701pt x 71.517pt on input line 1
-093.
- [16 <./ImagenesEj3/Ej3Mealy.jpg>] [17 <./ImagenesEj3/SimEJ3Mealy.png>] (inform
-e-tp3.aux
+302.
+ [18 <./Untitled.jpg> <./ImagenesEj3/SimEJ3Mealy.png>]
+(informe-tp3.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 ) ) 
 Here is how much of TeX's memory you used:
- 14278 strings out of 493312
- 275042 string characters out of 3136287
- 357609 words of memory out of 3000000
- 17527 multiletter control sequences out of 15000+200000
- 10266 words of font info for 24 fonts, out of 3000000 for 9000
+ 17845 strings out of 493312
+ 330193 string characters out of 3136281
+ 459248 words of memory out of 3000000
+ 20783 multiletter control sequences out of 15000+200000
+ 106451 words of font info for 179 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,16n,69p,423b,974s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Ezequiel PC\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\
-dpi600\ecbx1200.pk> <C:\Users\Ezequiel PC\AppData\Local\MiKTeX\2.9\fonts\pk\ljf
-our\jknappen\ec\dpi600\ecbx2074.pk> <C:\Users\Ezequiel PC\AppData\Local\MiKTeX\
-2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\Ezequiel PC\AppDa
-ta\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1000.pk> <C:\Users\E
-zequiel PC\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440
-.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pf
-b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:
-/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Pro
-gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on informe-tp3.pdf (17 pages, 545046 bytes).
+ 55i,17n,69p,423b,1039s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/fourier/fourier-mex.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/fourier/fourier-ms.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/adobe/utopia/putb8a.pfb><C:/Program Files (x86)/
+MiKTeX 2.9/fonts/type1/adobe/utopia/putr8a.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/adobe/utopia/putri8a.pfb>
+Output written on informe-tp3.pdf (19 pages, 1120349 bytes).
 PDF statistics:
- 291 PDF objects out of 1000 (max. 8388607)
+ 121 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 118 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 32389 words of extra memory for PDF output out of 35830 (max. 10000000)
 
